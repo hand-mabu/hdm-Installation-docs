@@ -1,0 +1,20 @@
+[{
+    "code": "hdmdesc",
+    "path": ""
+}, {
+    "code": "linux",
+    "path": "linux/"
+}, {
+    "code": "windows",
+    "path": "windows/"
+}, {
+    "code": "question",
+    "path": "question/",
+    "children": [{
+        "code": "linux_question",
+        "path": "linux_question/"
+    }, {
+        "code": "windows_question",
+        "path": "windows_question/"
+    }]
+}]
