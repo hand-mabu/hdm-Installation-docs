@@ -8,9 +8,8 @@ subtitle: HDM安装手册
 description: HDM安装手册
 keywords:
 author: Mina
-language: zh_Hans
+language: zh-CN
 timezone:
-
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://mabu.github.io/hdm-installation-doc
@@ -81,7 +80,7 @@ theme_config:
   support:
     link_url: 'https://pan.baidu.com/s/17OjyMbIA75L8Rvu1CcnTnA'
     text: '© Copyright 2013-2019 Hand-Mabu <br> <br> click here to download' # default
-    link_text: 'HDM产品手册' # default
+    link_text: 'HDM安装手册' # default
     navigation: true # default
     navigation_label: 'Downloads' # default
 

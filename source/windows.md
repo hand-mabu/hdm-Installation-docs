@@ -9,124 +9,139 @@ description: Verison 1.0.0
 ## 介质
 
 ####程序目录
-mkdir -p /u01/software
-chown -R hdm:dba /u01
-####上传介质
->hdm用户上传介质
-
-```yaml
-[hdm@hdm01 software]$ pwd/u01/software[hdm@hdm01 software]$ ls -l-rwxrwxrwx. 1 hdm dba   8491533 Feb  7 17:10 apache-maven-3.3.9-bin.tar.gz-rwxrwxrwx. 1 hdm dba   9323097 Feb  7 17:10 apache-tomcat-8.5.8.tar.gz-rwxrwxrwx. 1 hdm dba 191659031 Feb  7 17:11 hbiparent.zip-rwxrwxrwx. 1 hdm dba 192091468 Feb  8 14:05 HDM_SOURCE.zip-rwxrwxrwx. 1 hdm dba 181442359 Feb  7 17:11 jdk-8u111-linux-x64.gz-rwxrwxrwx. 1 hdm dba   1544040 Feb  7 17:11 redis-3.2.5.tar.gz-rwxrwxrwx. 1 hdm dba       165 Feb  7 17:11 starthdm.sh-rwxrwxrwx. 1 hdm dba       129 Feb  7 17:11 stophdm.sh
-```
-
+E:\HFM\install_Software\HDM
+####安装介质
+apache-maven-3.3.9-bin.zipapache-tomcat-8.0.32-windows-x64.zipjdk-8u121-windows-x64.exe（jdk版本1.8以上，可根据电脑配置安装32位或64位jdk）Redis-x64-3.2.100.zip
+nginx-1.15.11.zipcore.warcore-db.rar
+##安装jdk
+ 双击运行安装文件 jdk-8u121-windows-x64.exe(详略) Jdk环境变量设置
+``` JAVA_HOME=E:\HFM\HDM\Java\jdk1.8.0_121 PATH=%JAVA_HOME%\bin;%PATH% JAVA_BIN=%JAVA_HOME%\bin JAVA_LIB=%JAVA_HOME%\lib CLASSPATH=.;%JAVA_LIB%\tools.jar;%JAVA_LIB%\dt.jar
+``` java -version查看jdk版本
 ## 安装tomcat
-
 ####下载tomcat
-
->本次安装的tomcat介质：apache-tomcat-8.5.8.tar.gz
-
+tomcat介质：apache-tomcat-8.0.32-windows-x64.zip
 ####安装tomcat
-```yaml
-mkdir /u01/HDMcd /u01/HDMtar -zxvf /u01/software/apache-tomcat-8.5.8.tar.gz
-```
-
-
+解压压缩包apache-tomcat-8.0.32-windows-x64.zip 
 ####启动tomcat
->/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh
-
-```yaml[hdm@hdm01 bin]$ /u01/HDM/apache-tomcat-8.5.8/bin/startup.shUsing CATALINA_BASE:   /u01/HDM/apache-tomcat-8.5.8Using CATALINA_HOME:   /u01/HDM/apache-tomcat-8.5.8Using CATALINA_TMPDIR: /u01/HDM/apache-tomcat-8.5.8/tempUsing JRE_HOME:        /usrUsing CLASSPATH:       /u01/HDM/apache-tomcat-8.5.8/bin/bootstrap.jar:/u01/HDM/apache-tomcat-8.5.8/bin/tomcat-juli.jarTomcat started.[hdm@hdm01 bin]$
+（需提前安装配置好JAVA，启动port端口为8080）
+```E:\HFM\HDM\apache-tomcat-8.0.32\bin\startup.bat
+```对应的停止脚本
+```E:\HFM\HDM\apache-tomcat-8.0.32\bin\shutdown.sh
 ```
->启动port端口为8080*对应的停止脚本*/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh
-
 ## 安装redis
 ####下载redis
 
->本次安装的redis介质如下：redis-3.2.5.tar.gz
+本次安装的redis介质：Redis-x64-3.2.100.zip
 
 ####安装redis
 
->cd /u01/HDMtar -zxvf /u01/software/redis-3.2.5.tar.gzcd /u01/HDM/redis-3.2.5sudo make 
-
-日志会留下如下：
-```yaml
-make[1]: Leaving directory `/u01/HDM/redis-3.2.5/src'
-```
-
->cd /u01/HDM/redis-3.2.5/srcmkdir /u01/HDM/redis-3.2.5/redissudo make install  PREFIX=/u01/HDM/redis-3.2.5/redis
-
-```yaml
-日志：Hint: It's a good idea to run 'make test' ;)    INSTALL install    INSTALL install    INSTALL install    INSTALL install    INSTALL install
-```
+解压文件：Redis-x64-3.2.100.zipcd E:\HFM\HDM\Redis-x64-3.2.100
 
 ####配置文件
-/*******************************注释开始*********************************/先新建文件夹mkdir /u01/HDM/redis-3.2.5/logs/*******************************注释结束*********************************/vi /u01/HDM/redis-3.2.5/redis.conf1.启动port端口为63792.将daemonize的值改为yes3.logspidfile /u01/HDM/redis-3.2.5/logs/redis_6379.pidlogfile "/u01/HDM/redis-3.2.5/logs/redis.log"dir /u01/HDM/redis-3.2.5/logs
-####启动redis
-Redis放在服务器后台运行，修改配置文件属性：将daemonize的值改为yes （默认值为no）
->启动命令：/u01/HDM/redis-3.2.5/redis/bin/redis-server  /u01/HDM/redis-3.2.5/redis.conf停止命令：/u01/HDM/redis-3.2.5/redis/bin/redis-cli shutdown　　或者pkill redis-server
+```
+E:\HFM\HDM\Redis-x64-3.2.100\redis.windows.conf
+```1. 启动port端口为63792. 将daemonize的值改为yes（这是设置后台运行，可以不操作） 	Redis放在服务器后台运行，修改配置文件属性：   将daemonize的值改为yes （默认值为no）3. logs
 
-##安装mavenv 部署工具
+```pidfile E:\HFM\HDM\Redis-x64-3.2.100\logs\redis_6380.pidlogfile "E:\HFM\HDM\Redis-x64-3.2.100\logs\redis.log"dir E:\HFM\HDM\Redis-x64-3.2.100\logs
+```
+
+####启动redis
+启动命令：
+```C:\HDM\Redis-x64-3.2.100\ redis-server.exe
+```
+
+##安装maven部署工具
 ####说明
 安装maven
 ####下载maven
-URL: http://maven.apache.org/download.cgi本次安装的maven介质如下：apache-maven-3.3.9-bin.tar.gz
-####安装jdk
-```yaml
-cd  /u01/HDMtar -zxvf /u01/software/jdk-8u111-linux-x64.gz设置java环境变量export JAVA_HOME=/u01/HDM/jdk1.8.0_111export PATH=$JAVA_HOME/bin:$PATHexport JAVA_BIN=$JAVA_HOME/binexport JAVA_LIB=$JAVA_HOME/libexport CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
-```
+URL: http://maven.apache.org/download.cgi本次安装的maven介质如下：apache-maven-3.3.9-bin.zip
 ####安装maven
-```yaml
-cd /u01/HDMtar -zxvf /u01/software/apache-maven-3.3.9-bin.tar.gz
-```
+解压文件到指定目录：apache-maven-3.3.9-bin.zip
 ####环境变量
-```yaml
-配置maven的环境变量export MAVEN_HOME= /u01/HDM/apache-maven-3.3.9export PATH=${MAVEN_HOME}/bin:${PATH}export PATH=$PATH:/u01/HDM/redis-3.2.5/redis/binexport CATALINA_HOME=/u01/HDM/apache-tomcat-8.5.8export CATALINE_BASH=/u01/HDM/apache-tomcat-8.5.8
+配置maven的环境变量
+```MAVEN_HOME= E:\HFM\HDM\apache-maven-3.3.9CATALINA_HOME= E:\HFM\HDM\apache-tomcat-8.0.32CATALINA_BASH= E:\HFM\HDM\apache-tomcat-8.0.32
 ```
 ####安装后验证
-```yaml
-[hdm@hdm01 ~]$ mvn -vApache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)Maven home: /u01/HDM/apache-maven-3.3.9Java version: 1.8.0_111, vendor: Oracle CorporationJava home: /u01/HDM/jdk1.8.0_111/jreDefault locale: en_US, platform encoding: UTF-8OS name: "linux", version: "2.6.32-358.el6.x86_64", arch: "amd64", family: "unix"
-```
+![Alt text](../source/assets/img/maven_verify.png)
 #配置
 ##配置数据库
 ####创建表空间
 ```yaml
-CREATE TABLESPACE "HDM_DATA"     LOGGING     DATAFILE '/u01/app/oracle/oradata/HYTST/hdm_data01.dbf' SIZE 1000M     AUTOEXTEND     ON NEXT  100M MAXSIZE  8000M EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT  AUTO;
+create tablespace TS_HDMdatafile 'TS_HDM.dbf' size 50Mautoextend on next 50M maxsize unlimited loggingextent management local autoallocatesegment space management auto;
 ```
 ####创建数据库用户
 ```yaml
-create user hdm identified by z8MhZismTJ default tablespace HDM_DATA TEMPORARY TABLESPACE "TEMP";
+create user hdm ---用户名identified by hdm---密码default tablespace TS_HDM ---表空间名temporary tablespace TEMPprofile DEFAULT;
 ```
 ####授权
 ```yaml
-grant connect ,resource,create view,create any directory ,create database link to hdm;
+-- Grant/Revoke role privileges grant resource to hdm; -- Grant/Revoke system privileges grant create session to hdm;grant create view to hdm;grant unlimited tablespace to hdm;
 ```
 ##配置应用
 ####源代码
-```yaml
-cd /u01/HDMunzip /u01/software/core-db.zip[hdm@hdm01 core-db]$ pwd/u01/HDM/core-db
-```
+解压core-db.rar
 ####编译（需要连接外网）
-(该操作只需要在一台机器上执行，第二个节点可以考虑直接拷贝core.war包)```yaml
-在源码文件夹下执行：mvn clean install例如本次：cd  /u01/HDM/core-dbmvn clean install
-```(日志显示download的包，存放在当前用户/home/user/.m2下，该部分可以拷贝)/******************************注释开始*******************************/这个下载时间挺长，有时会卡住，有时会执行失败，若失败就再执行一次mvn clean install。如果卡住可以等待。或者ctrl+c退出，然后再执行一次。/******************************注释结束*******************************/
+(该操作只需要在一台机器上执行，第二个节点可以考虑直接拷贝core.war包)
+初始化数据到hdm用户```yaml
+在C:\HDM\core-db 路径下cmd命令窗口执行初始化数据库命令（耐心等待）：
+mvn clean install
+```
 ####初始化数据到hdm用户（只需要在一台机器上执行）
 编译成功后，执行初始化数据库命令：
-```yamlmvn process-resources -D skipLiquibaseRun=false -D db.driver=oracle.jdbc.driver.OracleDriver -D db.url=jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST -Ddb.user=hdm -Ddb.password=z8MhZismTJ
-``````yaml[INFO] Reactor Summary:[INFO] core-db ............................................ SUCCESS [  1.073 s][INFO] ------------------------------------------------------------------------[INFO] BUILD SUCCESS[INFO] ------------------------------------------------------------------------[INFO] Total time: 39.836 s[INFO] Finished at: 2017-02-09T09:55:50+08:00[INFO] Final Memory: 68M/974M[INFO] ------------------------------------------------------------------------[hdm@hdm01 core-db]$
+```yamlmvn process-resources -D skipLiquibaseRun=false -D db.driver=oracle.jdbc.driver.OracleDriver -D db.url=jdbc:oracle:thin:@localhost:1521:orcl11g -Ddb.user=hdm -D db.password=hdm
 ```
-####修改tomcat
-修改tomcat目录（/u01/HDM/apache-tomcat-8.5.8/conf）下的conf/context.xml,在最后面添加如下配置：
-```yaml<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" name="jdbc/hbi_dev" type="javax.sql.DataSource" url="jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST" username="hdm" password="z8MhZismTJ"/>
-```本次截图：
+
+![Alt text](../source/assets/img/core_db_windows.jpg)####修改tomcat
+修改tomcat目录下的conf/context.xml,在最后面添加如下配置：
+```yaml<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" name="jdbc/hbi_dev" type="javax.sql.DataSource"     url="jdbc:oracle:thin:@ localhost:1521:orcl11g" username="hdm" password="hdm"/>
+```
+![Alt text](../source/assets/img/tomcat_config_w.jpg)
 ####拷贝war包
-将源代码目录下/core/target/core.war拷贝到tomcat的webapps目录下，注意：模板文件上传路径默认如下：需要更改文件存储路径的，可修改配置文件，修改方式为：可将core.war先重命名为core.zip，找到core.zip\WEB-INF\classes路径下config.properties文件，进行相应修改。若修改此配置文件，则以后每次更新系统，都需要修改配置文件。
-```cp /u01/HDM/hbiparent/core/target/core.war /u01/HDM/apache-tomcat-8.5.8/webapps$ls -l /u01/HDM/apache-tomcat-8.5.8/webapps/core.war -rw-r--r--. 1 hdm dba 127410530 Feb  9 10:04 /u01/HDM/apache-tomcat-8.5.8/webapps/core.war
+将core.war拷贝到tomcat的webapps目录(C:\HDM\apache-tomcat-8.0.32\webapps)下注意：模板文件上传路径默认如下：
+####服务启停
+启动Oracle数据库，开始->服务，在服务面板中启动一下两个服务：
+```OracleOraDb11g_home1TNSListenerOracleServiceORCL11G
+```其次，先启动redis服务，再启动tomcat服务，注意先后顺序，启动后两个都不要关。redis 启动
+```C:\HDM\Redis-x64-3.2.100\ redis-server.exe
+```Tomcat启动（耐心等待）
+```E:\HFM\HDM\apache-tomcat-8.0.32\bin\startup.bat
 ```
-####添加永久环境变量
-编辑hdm用户目录(/home/hdm)下的.bash_profilevi /home/hdm/.bash_profile设置java环境变量
-```export JAVA_HOME=/u01/HDM/jdk1.8.0_111export PATH=$JAVA_HOME/bin:$PATHexport JAVA_BIN=$JAVA_HOME/binexport JAVA_LIB=$JAVA_HOME/libexport CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
-```配置maven的环境变量
-```export MAVEN_HOME=/u01/HDM/apache-maven-3.3.9export PATH=${MAVEN_HOME}/bin:${PATH}export PATH=$PATH:/u01/HDM/redis-3.2.5/redis/binexport CATALINA_HOME=/u01/HDM/apache-tomcat-8.5.8export CATALINE_BASH=/u01/HDM/apache-tomcat-8.5.8
-```注：修改文件后要想马上生效还要运行$ source /home/hdm/.bash_profile不然只能在下次重进此用户时生效。
-####redis和tomcat服务启停
-先启动redis服务，再启动tomcat服务，redis启动/停止/u01/HDM/redis-3.2.5/redis/bin/redis-server  /u01/HDM/redis-3.2.5/redis.conf/u01/HDM/redis-3.2.5/redis/bin/redis-cli shutdownTomcat启动/停止/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh
 ####访问url（两个节点同样的安装方式）
-通过http://<ip>:<prot>/core访问hdm，http://172.16.2.112:8080/corehttp://172.16.2.113:8080/core初始用户admin/admin
+通过http://<ip>:<prot>/core访问hdm，http://localhost:8080/core初始用户admin/admin
+![Alt text](../source/assets/img/hdm_login.jpg)
+## 负载均衡
+### 下载软件
+从http://nginx.org/en/download.html下载nginxnginx-1.15.11.zip
+### 安装nginx
+>
+cd c:\
+unzip nginx-1.15.11.zip
+cd nginx-1.15.11
+
+运行tasklist命令行实用程序以查看nginx进程：
+>
+C:\nginx-1.15.11>tasklist /fi "imagename eq nginx.exe"
+Image Name           PID Session Name     Session#    Mem Usage
+=============== ======== ============== ========== ============
+nginx.exe            652 Console                 0      2 780 K
+nginx.exe           1332 Console                 0      3 112 K
+
+其中一个进程是主进程，另一个进程是工作进程。 如果nginx没有启动，请在错误日志文件logs \ error.log中查找原因。 如果尚未创建日志文件，则应在Windows事件日志中报告其原因。 如果显示错误页面而不是预期页面，还要在logs \ error.log文件中查找原因。
+nginx / Windows使用运行它的目录作为配置中相对路径的前缀。 在上面的示例中，前缀是C：\ nginx-1.15.11 \。 必须使用正斜杠以UNIX样式指定配置文件中的路径：
+>access_log   logs/site.log;
+root         C:/web/html;
+
+### nginx服务启停
+root用户操作：启动nginx
+```cd nginx-1.15.11
+start nginx
+```关闭nginx
+```
+cd nginx-1.15.11nginx -s stop
+```登录测试(缺省端口为80)
+### 配置nginx
+配置nginx，修改C:/nginx-1.15.11/conf/nginx.conf
+```upstream  ys-hdmtest1.jingpai.com {    ip_hash;    server 172.16.2.112:8080;    server 172.16.2.113:8080;    }server {        listen       80;        server_name  location;        #charset koi8-r;        #access_log  logs/host.access.log  main;        location / {            proxy_pass http://ys-hdmtest1.jingpai.com;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            root   html;            index  index.html index.htm;        }
+```
+### 访问url
+访问hdm，http://ys-hdmtest1.jingpai.com/core初始用户admin/admin

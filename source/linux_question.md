@@ -1,132 +1,71 @@
 ---
-title: linux版
+title: linux版疑难问题集
 permalink: /linux_question/
 description: Verison 1.0.0
 ---
 
-# 安装应用软件
+# 疑难问题集
 
-## 介质
+## 错误1 redis无法正常启停
 
-####程序目录
-mkdir -p /u01/software
-chown -R hdm:dba /u01
-####上传介质
->hdm用户上传介质
+####问题1
+权限不够，导致redis无法正常启停
 
-```yaml
-[hdm@hdm01 software]$ pwd/u01/software[hdm@hdm01 software]$ ls -l-rwxrwxrwx. 1 hdm dba   8491533 Feb  7 17:10 apache-maven-3.3.9-bin.tar.gz-rwxrwxrwx. 1 hdm dba   9323097 Feb  7 17:10 apache-tomcat-8.5.8.tar.gz-rwxrwxrwx. 1 hdm dba 191659031 Feb  7 17:11 hbiparent.zip-rwxrwxrwx. 1 hdm dba 192091468 Feb  8 14:05 HDM_SOURCE.zip-rwxrwxrwx. 1 hdm dba 181442359 Feb  7 17:11 jdk-8u111-linux-x64.gz-rwxrwxrwx. 1 hdm dba   1544040 Feb  7 17:11 redis-3.2.5.tar.gz-rwxrwxrwx. 1 hdm dba       165 Feb  7 17:11 starthdm.sh-rwxrwxrwx. 1 hdm dba       129 Feb  7 17:11 stophdm.sh
+#####错误日志
 ```
-
-## 安装tomcat
-
-####下载tomcat
-
->本次安装的tomcat介质：apache-tomcat-8.5.8.tar.gz
-
-####安装tomcat
-```yaml
-mkdir /u01/HDMcd /u01/HDMtar -zxvf /u01/software/apache-tomcat-8.5.8.tar.gz
+2481:M 08 Feb 15:07:57.716 # User requested shutdown...2481:M 08 Feb 15:07:57.716 * Saving the final RDB snapshot before exiting.2481:M 08 Feb 15:07:57.716 # Failed opening the RDB file dump.rdb (in server root dir /u01/HDM/redis-3.2.5/redis/bin) for saving: Permission denied2481:M 08 Feb 15:07:57.716 # Error trying to save the DB, can't exit.
 ```
-
-
-####启动tomcat
->/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh
-
-```yaml[hdm@hdm01 bin]$ /u01/HDM/apache-tomcat-8.5.8/bin/startup.shUsing CATALINA_BASE:   /u01/HDM/apache-tomcat-8.5.8Using CATALINA_HOME:   /u01/HDM/apache-tomcat-8.5.8Using CATALINA_TMPDIR: /u01/HDM/apache-tomcat-8.5.8/tempUsing JRE_HOME:        /usrUsing CLASSPATH:       /u01/HDM/apache-tomcat-8.5.8/bin/bootstrap.jar:/u01/HDM/apache-tomcat-8.5.8/bin/tomcat-juli.jarTomcat started.[hdm@hdm01 bin]$
+#####处理方式
+原因是由于hdm无权限写dump文件，修改dump路径可以成功解决该问题修改配置文件/u01/HDM/redis-3.2.5/redis.conf的dump路径**dir /u01/HDM/redis-3.2.5/logs**
+####问题2
+GLIBC版本不够，导致Redis无法正常启停
+#####错误日志
+![Alt text](../source/assets/img/error1_question2_linux.png)
+#####处理方式
+######1、服务器上glibc库的版本是2.12，需要升级到2.17版本。下载地址：http://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz
+（这里可以选择你所需要的版本）######2、安装部署
+```[hdm@mabuepm hdm]# tar -xf glibc-2.17.tar.gz[hdm@mabuepm hdm]# cd glibc-2.17[hdm@mabuepm glibc-2.17]# mkdir build; cd build[hdm@mabuepm build]# ../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin[hdm@mabuepm build]# make -j 16[hdm@mabuepm build]# make  install[hdm@mabuepm hdm]# strings /lib64/libc.so.6 | grep GLIBC[hdm@mabuepm hdm]$ strings /lib64/libc.so.6 | grep GLIBCGLIBC_2.2.5GLIBC_2.2.6GLIBC_2.3GLIBC_2.3.2GLIBC_2.3.3GLIBC_2.3.4GLIBC_2.4GLIBC_2.5GLIBC_2.6GLIBC_2.7GLIBC_2.8GLIBC_2.9GLIBC_2.10GLIBC_2.11GLIBC_2.12GLIBC_2.13GLIBC_2.14GLIBC_2.15GLIBC_2.16GLIBC_2.17GLIBC_PRIVATE
+```我们可以看到部署成功后的glibc的版本为2.17 
+```[hdm@mabuepm hdm]$ ldd --versionldd (GNU libc) 2.12Copyright (C) 2010 Free Software Foundation, Inc.This is free software; see the source for copying conditions.  There is NOwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.Written by Roland McGrath and Ulrich Drepper.
+```如若未升级成功，可以尝试重启服务器后再查看版本即可。
+##错误2 tomcat启动报错too low setting for -Xss
+####问题
+tomcat启动报错too low setting for ?Xss，导致系统无法登陆
+####错误日志
 ```
->启动port端口为8080*对应的停止脚本*/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh
-
-## 安装redis
-####下载redis
-
->本次安装的redis介质如下：redis-3.2.5.tar.gz
-
-####安装redis
-
->cd /u01/HDMtar -zxvf /u01/software/redis-3.2.5.tar.gzcd /u01/HDM/redis-3.2.5sudo make 
-
-日志会留下如下：
-```yaml
-make[1]: Leaving directory `/u01/HDM/redis-3.2.5/src'
+Caused by: java.lang.IllegalStateException: Unable to complete the scan for annotations for web application [/core] due to a StackOverflowError. Possible root causes include a too low setting for -Xss and illegal cyclic inheritance dependencies. The class hierarchy being processed was [org.bouncycastle.asn1.ASN1EncodableVector->```
+####处理方式
+因为tomcat启动会去扫描jar包，看错误信息org.bouncycastle.asn1.ASN1EncodableVector，是出在这个类，这个类似出现在bcprov*.jar这个包，所以在tomcat的conf目录里面catalina.properties的文件，在tomcat.util.scan.DefaultJarScanner.jarsToSkip=里面加上bcprov*.jar过滤,如下：修改：/u01/HDM/apache-tomcat-8.5.8/conf/catalina.properties在tomcat.util.scan.StandardJarScanFilter.jarsToSkip尾部添加bcprov*.jar下：
+```tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\………………….jetty-*.jar,oro-*.jar,servlet-api-*.jar,tagsoup-*.jar,xmlParserAPIs-*.jar,\xom-*.jar,bcprov*.jar
+```##错误3
+登录HDM报 HTTP Status 404
+####问题
+打开浏览器登录HDM报 HTTP Status 404 - /core
+![Alt text](../source/assets/img/error3_question_linux.png)
+####错误日志
+查看tomcat的Catalina.out日志
+![Alt text](../source/assets/img/error3_log_linux.png)```yaml21-Apr-2018 10:54:09.845 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /u01/HDM/apache-tomcat-8.5.8/webapps/core.war21-Apr-2018 10:54:18.638 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.21-Apr-2018 10:54:18.666 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file21-Apr-2018 10:54:18.670 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal Context [/core] startup failed due to previous errors21-Apr-2018 10:54:18.665 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Error configuring application listener of class hbi.core.hdm.utils.HdmConLoadListener java.lang.UnsupportedClassVersionError: hbi/core/hdm/utils/HdmConLoadListener : Unsupported major.minor version 52.0 (unable to load class hbi.core.hdm.utils.HdmConLoadListener)
 ```
-
->cd /u01/HDM/redis-3.2.5/srcmkdir /u01/HDM/redis-3.2.5/redissudo make install  PREFIX=/u01/HDM/redis-3.2.5/redis
-
-```yaml
-日志：Hint: It's a good idea to run 'make test' ;)    INSTALL install    INSTALL install    INSTALL install    INSTALL install    INSTALL install
+####处理方式将环境变量写入用户hdm的.bash_profile文件，见”添加永久环境变量”
+##错误4
+停止nginx报No such file
+####问题
+停止nginx服务报No such file错误
+![Alt text](../source/assets/img/error4_question_linux.png)
+####错误日志
+```nginx: [error] open() "/lb/nginx/logs/nginx.pid" failed (2: No such file or directory)
 ```
-
-####配置文件
-/*******************************注释开始*********************************/先新建文件夹mkdir /u01/HDM/redis-3.2.5/logs/*******************************注释结束*********************************/vi /u01/HDM/redis-3.2.5/redis.conf1.启动port端口为63792.将daemonize的值改为yes3.logspidfile /u01/HDM/redis-3.2.5/logs/redis_6379.pidlogfile "/u01/HDM/redis-3.2.5/logs/redis.log"dir /u01/HDM/redis-3.2.5/logs
-####启动redis
-Redis放在服务器后台运行，修改配置文件属性：将daemonize的值改为yes （默认值为no）
->启动命令：/u01/HDM/redis-3.2.5/redis/bin/redis-server  /u01/HDM/redis-3.2.5/redis.conf停止命令：/u01/HDM/redis-3.2.5/redis/bin/redis-cli shutdown　　或者pkill redis-server
-
-##安装mavenv 部署工具
-####说明
-安装maven
-####下载maven
-URL: http://maven.apache.org/download.cgi本次安装的maven介质如下：apache-maven-3.3.9-bin.tar.gz
-####安装jdk
-```yaml
-cd  /u01/HDMtar -zxvf /u01/software/jdk-8u111-linux-x64.gz设置java环境变量export JAVA_HOME=/u01/HDM/jdk1.8.0_111export PATH=$JAVA_HOME/bin:$PATHexport JAVA_BIN=$JAVA_HOME/binexport JAVA_LIB=$JAVA_HOME/libexport CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
+####处理方式
+在/lb/nginx/logs下建文件nginx.pid，任意输入一个数字
+![Alt text](../source/assets/img/error4_log_linux.png)
+##错误5启动nginx报Address already in use
+####问题
+启动nginx报Address already in use错误
+![Alt text](../source/assets/img/error5_question_linux.png)
+####错误日志
 ```
-####安装maven
-```yaml
-cd /u01/HDMtar -zxvf /u01/software/apache-maven-3.3.9-bin.tar.gz
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
 ```
-####环境变量
-```yaml
-配置maven的环境变量export MAVEN_HOME= /u01/HDM/apache-maven-3.3.9export PATH=${MAVEN_HOME}/bin:${PATH}export PATH=$PATH:/u01/HDM/redis-3.2.5/redis/binexport CATALINA_HOME=/u01/HDM/apache-tomcat-8.5.8export CATALINE_BASH=/u01/HDM/apache-tomcat-8.5.8
-```
-####安装后验证
-```yaml
-[hdm@hdm01 ~]$ mvn -vApache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)Maven home: /u01/HDM/apache-maven-3.3.9Java version: 1.8.0_111, vendor: Oracle CorporationJava home: /u01/HDM/jdk1.8.0_111/jreDefault locale: en_US, platform encoding: UTF-8OS name: "linux", version: "2.6.32-358.el6.x86_64", arch: "amd64", family: "unix"
-```
-#配置
-##配置数据库
-####创建表空间
-```yaml
-CREATE TABLESPACE "HDM_DATA"     LOGGING     DATAFILE '/u01/app/oracle/oradata/HYTST/hdm_data01.dbf' SIZE 1000M     AUTOEXTEND     ON NEXT  100M MAXSIZE  8000M EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT  AUTO;
-```
-####创建数据库用户
-```yaml
-create user hdm identified by z8MhZismTJ default tablespace HDM_DATA TEMPORARY TABLESPACE "TEMP";
-```
-####授权
-```yaml
-grant connect ,resource,create view,create any directory ,create database link to hdm;
-```
-##配置应用
-####源代码
-```yaml
-cd /u01/HDMunzip /u01/software/core-db.zip[hdm@hdm01 core-db]$ pwd/u01/HDM/core-db
-```
-####编译（需要连接外网）
-(该操作只需要在一台机器上执行，第二个节点可以考虑直接拷贝core.war包)```yaml
-在源码文件夹下执行：mvn clean install例如本次：cd  /u01/HDM/core-dbmvn clean install
-```(日志显示download的包，存放在当前用户/home/user/.m2下，该部分可以拷贝)/******************************注释开始*******************************/这个下载时间挺长，有时会卡住，有时会执行失败，若失败就再执行一次mvn clean install。如果卡住可以等待。或者ctrl+c退出，然后再执行一次。/******************************注释结束*******************************/
-####初始化数据到hdm用户（只需要在一台机器上执行）
-编译成功后，执行初始化数据库命令：
-```yamlmvn process-resources -D skipLiquibaseRun=false -D db.driver=oracle.jdbc.driver.OracleDriver -D db.url=jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST -Ddb.user=hdm -Ddb.password=z8MhZismTJ
-``````yaml[INFO] Reactor Summary:[INFO] core-db ............................................ SUCCESS [  1.073 s][INFO] ------------------------------------------------------------------------[INFO] BUILD SUCCESS[INFO] ------------------------------------------------------------------------[INFO] Total time: 39.836 s[INFO] Finished at: 2017-02-09T09:55:50+08:00[INFO] Final Memory: 68M/974M[INFO] ------------------------------------------------------------------------[hdm@hdm01 core-db]$
-```
-####修改tomcat
-修改tomcat目录（/u01/HDM/apache-tomcat-8.5.8/conf）下的conf/context.xml,在最后面添加如下配置：
-```yaml<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" name="jdbc/hbi_dev" type="javax.sql.DataSource" url="jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST" username="hdm" password="z8MhZismTJ"/>
-```本次截图：
-####拷贝war包
-将源代码目录下/core/target/core.war拷贝到tomcat的webapps目录下，注意：模板文件上传路径默认如下：需要更改文件存储路径的，可修改配置文件，修改方式为：可将core.war先重命名为core.zip，找到core.zip\WEB-INF\classes路径下config.properties文件，进行相应修改。若修改此配置文件，则以后每次更新系统，都需要修改配置文件。
-```cp /u01/HDM/hbiparent/core/target/core.war /u01/HDM/apache-tomcat-8.5.8/webapps$ls -l /u01/HDM/apache-tomcat-8.5.8/webapps/core.war -rw-r--r--. 1 hdm dba 127410530 Feb  9 10:04 /u01/HDM/apache-tomcat-8.5.8/webapps/core.war
-```
-####添加永久环境变量
-编辑hdm用户目录(/home/hdm)下的.bash_profilevi /home/hdm/.bash_profile设置java环境变量
-```export JAVA_HOME=/u01/HDM/jdk1.8.0_111export PATH=$JAVA_HOME/bin:$PATHexport JAVA_BIN=$JAVA_HOME/binexport JAVA_LIB=$JAVA_HOME/libexport CLASSPATH=.:$JAVA_LIB/tools.jar:$JAVA_LIB/dt.jar
-```配置maven的环境变量
-```export MAVEN_HOME=/u01/HDM/apache-maven-3.3.9export PATH=${MAVEN_HOME}/bin:${PATH}export PATH=$PATH:/u01/HDM/redis-3.2.5/redis/binexport CATALINA_HOME=/u01/HDM/apache-tomcat-8.5.8export CATALINE_BASH=/u01/HDM/apache-tomcat-8.5.8
-```注：修改文件后要想马上生效还要运行$ source /home/hdm/.bash_profile不然只能在下次重进此用户时生效。
-####redis和tomcat服务启停
-先启动redis服务，再启动tomcat服务，redis启动/停止/u01/HDM/redis-3.2.5/redis/bin/redis-server  /u01/HDM/redis-3.2.5/redis.conf/u01/HDM/redis-3.2.5/redis/bin/redis-cli shutdownTomcat启动/停止/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh
-####访问url（两个节点同样的安装方式）
-通过http://<ip>:<prot>/core访问hdm，http://172.16.2.112:8080/corehttp://172.16.2.113:8080/core初始用户admin/admin
+####处理方式
+说明80端口被占用，杀掉这个进程：killall -9 nginx
+![Alt text](../source/assets/img/error5_resolve_linux.png)
