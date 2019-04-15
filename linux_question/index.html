@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <title>linux疑难问题集 | MabuDoc Theme</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <meta name="description" content="Modern, powerful and simple theme for Hexo.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/style.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/lib/prism/prism-ghcolors.min.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hand-mabu.github.io/hexo-mabu-doc/">
+    <meta property="og:title" content="介绍 | MabuDoc Theme">
+    <meta property="og:description" content="Modern Simlpe Powerful Theme for hexo">
+    <meta property="og:image" content>
+</head>
+
+<body>
+    
+<header class="pt-2 pb-2">
+    <div class="container grid-lg navbar pt-2 pb-2">
+        <section class="navbar-section">
+            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+            <a class="navbar-icon" href="https://hand-mabu.github.io/hexo-mabu-doc/">
+                <img src="/hdm-installation-doc/assets/img/hexo-theme-suka.png">
+            </a>
+            <a href="https://hand-mabu.github.io/hexo-mabu-doc/" class="btn btn-link">
+                MabuDoc Theme</a>
+        </section>
+        <section class="navbar-section">
+            
+            <a href="/hdm-installation-doc/linux_question/" class="btn btn-link navbar-link">English</a>
+            
+        </section>
+    </div>
+</header>
+
+    <div class="off-canvas off-canvas-sidebar-show">
+
+        <div id="sidebar" class="off-canvas-sidebar">
+            
+
+<div class="docs-nav">
+    <div class="docs-search has-icon-left">
+        <i class="form-icon icon icon-search"></i>
+        <input id="search-field" class="form-input" type="text" placeholder="Search...">
+    </div>
+    <div id="search-result"></div>
+    <ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/">
+        手册简介
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux/">
+        Linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows/">
+        windows版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="javascript:void(0);">
+        疑难问题
+    </a>
+</li><ul class="nav">
+
+<li class="nav-item active" style>
+    <a href="/hdm-installation-doc/linux_question/">
+        linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows_question/">
+        windows版
+    </a>
+</li></ul></ul>
+    <!-- <ul class="nav"> -->
+    <!-- 
+        <li class="nav-item">
+            <a href="/hdm-installation-doc/config/">nav.config</a>
+        </li>
+    -->
+    <!-- </ul> -->
+</div>
+        </div>
+
+        <a class="off-canvas-overlay" href="#close"></a>
+
+        <div class="off-canvas-content">
+            <div class="container px-0">
+                
+
+
+
+
+<div class="docs-header">
+    <div class="docs-header-wrapper">
+        <div class="title-wrapper">
+            <h1 class="docs-header-title mb-1">linux疑难问题集</h1>
+            
+                <p class="h4 mb-2">Verison 1.0.0</p>
+            
+        </div>
+        <!-- <span class="label label-rounded bg-dark mt-2">
+            <a class="docs-github" href="https://github.com/theme-suka/docs/tree/master/source/linux_question.md" target="_blank">在 GitHub 上编辑</a>
+        </span> -->
+    </div>
+</div>
+
+<div class="docs-content">
+    <div class="columns">
+        <div class="column col-9 col-lg-12 docs-content-section">
+            <div class="container px-0">
+                <div id="post-content">
+                    <h1 id="疑难问题集"><a href="#疑难问题集" class="headerlink" title="疑难问题集"></a>疑难问题集</h1><h2 id="tomcat部署"><a href="#tomcat部署" class="headerlink" title="tomcat部署"></a>tomcat部署</h2><h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3><h4 id="1、redis无法正常启停"><a href="#1、redis无法正常启停" class="headerlink" title="1、redis无法正常启停"></a>1、redis无法正常启停</h4><p><strong>问题1</strong><br>权限不够，导致redis无法正常启停</p>
+<p><strong>错误日志</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2481:M 08 Feb 15:07:57.716 # User requested shutdown...2481:M 08 Feb 15:07:57.716 * Saving the final RDB snapshot before exiting.2481:M 08 Feb 15:07:57.716 # Failed opening the RDB file dump.rdb (in server root dir /u01/HDM/redis-3.2.5/redis/bin) for saving: Permission denied2481:M 08 Feb 15:07:57.716 # Error trying to save the DB, can&apos;t exit.</span><br></pre></td></tr></table></figure></p>
+<p><strong>处理方式</strong><br>原因是由于hdm无权限写dump文件，修改dump路径可以成功解决该问题<br>修改配置文件/u01/HDM/redis-3.2.5/redis.conf的dump路径<br><strong>dir /u01/HDM/redis-3.2.5/logs</strong></p>
+<p><strong>问题2</strong><br>GLIBC版本不够，导致Redis无法正常启停<br><strong>错误日志</strong><br><img src="../source/assets/img/error1_question2_linux.png" alt="Alt text"><br><strong>处理方式</strong><br><strong>1、服务器上glibc库的版本是2.12，需要升级到2.17版本</strong><br>下载地址：<br><a href="http://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz" target="_blank" rel="noopener">http://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz</a><br>（这里可以选择你所需要的版本）<br><strong>2、安装部署</strong></p>
+<pre><code>[hdm@mabuepm hdm]# tar -xf glibc-2.17.tar.gz
+[hdm@mabuepm hdm]# cd glibc-2.17
+[hdm@mabuepm glibc-2.17]# mkdir build; cd build
+[hdm@mabuepm build]# ../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin
+[hdm@mabuepm build]# make -j 16
+[hdm@mabuepm build]# make  install
+[hdm@mabuepm hdm]# strings /lib64/libc.so.6 | grep GLIBC
+[hdm@mabuepm hdm]$ strings /lib64/libc.so.6 | grep GLIBC
+GLIBC_2.2.5
+GLIBC_2.2.6
+GLIBC_2.3
+GLIBC_2.3.2
+GLIBC_2.3.3
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.5
+GLIBC_2.6
+GLIBC_2.7
+GLIBC_2.8
+GLIBC_2.9
+GLIBC_2.10
+GLIBC_2.11
+GLIBC_2.12
+GLIBC_2.13
+GLIBC_2.14
+GLIBC_2.15
+GLIBC_2.16
+GLIBC_2.17
+GLIBC_PRIVATE
+</code></pre><p>我们可以看到部署成功后的glibc的版本为2.17 </p>
+<pre><code>[hdm@mabuepm hdm]$ ldd --version
+ldd (GNU libc) 2.12
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Written by Roland McGrath and Ulrich Drepper.
+</code></pre><p>如若未升级成功，可以尝试重启服务器后再查看版本即可。</p>
+<h4 id="2、tomcat启动报错too-low-setting-for-Xss"><a href="#2、tomcat启动报错too-low-setting-for-Xss" class="headerlink" title="2、tomcat启动报错too low setting for -Xss"></a>2、tomcat启动报错too low setting for -Xss</h4><p><strong>问题</strong><br>tomcat启动报错too low setting for ?Xss，导致系统无法登陆<br><strong>错误日志</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.IllegalStateException: Unable to complete the scan for annotations for web application [/core] due to a StackOverflowError. Possible root causes include a too low setting for -Xss and illegal cyclic inheritance dependencies. The class hierarchy being processed was [org.bouncycastle.asn1.ASN1EncodableVector-&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>处理方式</strong><br>因为tomcat启动会去扫描jar包，看错误信息org.bouncycastle.asn1.ASN1EncodableVector，是出在这个类，这个类似出现在bcprov<em>.jar这个包，所以在tomcat的conf目录里面catalina.properties的文件，<br>在tomcat.util.scan.DefaultJarScanner.jarsToSkip=里面加上bcprov</em>.jar过滤,如下：<br>修改：/u01/HDM/apache-tomcat-8.5.8/conf/catalina.properties<br>在tomcat.util.scan.StandardJarScanFilter.jarsToSkip尾部添加bcprov*.jar下：</p>
+<pre><code>tomcat.util.scan.StandardJarScanFilter.jarsToSkip=\
+………………….
+jetty-*.jar,oro-*.jar,servlet-api-*.jar,tagsoup-*.jar,xmlParserAPIs-*.jar,\
+xom-*.jar,bcprov*.jar
+</code></pre><h4 id="3、404"><a href="#3、404" class="headerlink" title="3、404"></a>3、404</h4><p>登录HDM报 HTTP Status 404<br><strong>问题</strong><br>打开浏览器登录HDM报 HTTP Status 404 - /core<br><img src="../source/assets/img/error3_question_linux.png" alt="Alt text"><br><strong>错误日志</strong><br>查看tomcat的Catalina.out日志<br><img src="../source/assets/img/error3_log_linux.png" alt="Alt text"></p>
+<p><code>`</code><br>21-Apr-2018 10:54:09.845 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /u01/HDM/apache-tomcat-8.5.8/webapps/core.war<br>21-Apr-2018 10:54:18.638 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.<br>21-Apr-2018 10:54:18.666 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file<br>21-Apr-2018 10:54:18.670 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal Context [/core] startup failed due to previous errors<br>21-Apr-2018 10:54:18.665 SEVERE [localhost-startStop-1] org.apache.catalina.core.StandardContext.listenerStart Error configuring application listener of class hbi.core.hdm.utils.HdmConLoadListener<br> java.lang.UnsupportedClassVersionError: hbi/core/hdm/utils/HdmConLoadListener : Unsupported major.minor version 52.0 (unable to load class hbi.core.hdm.utils.HdmConLoadListener)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**处理方式**将环境变量写入用户hdm的.bash_profile文件，见”添加永久环境变量”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 4、nginx file</span><br><span class="line">停止nginx报No such file</span><br><span class="line">**问题**</span><br><span class="line">停止nginx服务报No such file错误</span><br><span class="line">![](../source/assets/img/error4_question_linux.png)</span><br><span class="line">**错误日志**</span><br><span class="line">```nginx: [error] open() &quot;/lb/nginx/logs/nginx.pid&quot; failed (2: No such file or directory)</span><br></pre></td></tr></table></figure></p>
+<p><strong>处理方式</strong><br>在/lb/nginx/logs下建文件nginx.pid，任意输入一个数字<br><img src="../source/assets/img/error4_log_linux.png" alt></p>
+<h4 id="5、nginx-port"><a href="#5、nginx-port" class="headerlink" title="5、nginx port"></a>5、nginx port</h4><p>启动nginx报Address already in use<br><strong>问题</strong><br>启动nginx报Address already in use错误<br><img src="../source/assets/img/error5_question_linux.png" alt><br><strong>错误日志</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)</span><br></pre></td></tr></table></figure></p>
+<p><strong>处理方式</strong><br>说明80端口被占用，杀掉这个进程：<br>killall -9 nginx<br><img src="../source/assets/img/error5_resolve_linux.png" alt></p>
+<h2 id="weblogic部署"><a href="#weblogic部署" class="headerlink" title="weblogic部署"></a>weblogic部署</h2><h3 id="weblogic补丁"><a href="#weblogic补丁" class="headerlink" title="weblogic补丁"></a>weblogic补丁</h3><p><strong>反序列化漏洞</strong></p>
+<p>Oracle WebLogic<br>Server的T3通讯协议的实现中存在反序列化漏洞。远程攻击者可通过利用该漏洞发送特殊的报文完全控制WebLogic<br>Server。</p>
+<p>受影响的官方支持版本:10.3.6.0, 12.1.3.0, 12.2.1.2 和 12.2.1.3</p>
+<p><strong>厂商补丁:</strong></p>
+<p>Oracle已经为此发布了一个安全公告（cpuapr2018-3678067）以及相应补丁:</p>
+<p>cpuapr2018-3678067：Oracle Critical Patch Update Advisory - April 2018</p>
+<p>链接：<a href="http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html</a></p>
+<p>CVE编号:CVE-2018-2628</p>
+<p><strong>组件安全漏洞</strong></p>
+<p>Oracle WebLogic Server组件的WLS Core<br>Components子组件存在安全漏洞。攻击者可利用该漏洞未授权读取、更新、插入或删除数据，影响数据的保密性、可用性和完整性。</p>
+<p>受影响的官方支持版本: 10.3.6.0, 12.1.3.0, 12.2.1.2 和 12.2.1.3</p>
+<p><strong>厂商补丁</strong>：</p>
+<p>Oracle已经为此发布了一个安全公告（Oracle Critical Patch Update<br>Advisory）以及相应补丁:</p>
+<p>Oracle Critical Patch Update Advisory：Oracle Critical Patch Update Advisory -<br>July 2018</p>
+<p>链接：<a href="http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html</a></p>
+<p>CVE编号:<a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2893" target="_blank" rel="noopener">CVE-2018-2893</a>、CVE-2018-2894、CVE-2018-2935、CVE-2018-7489、CVE-2018-2987、CVE-2018-2998</p>
+<p>Apache Log4j 2.x \&lt;<br>2.8.2版本，若使用TCP或UDP套接字服务器接收其他应用的序列化日志事件，攻击者发送构造的二进制负载，反序列化时，可执行任意代码。</p>
+<p><strong>厂商补丁：</strong></p>
+<p>目前厂商已经发布了升级补丁以修复这个安全问题，请到厂商的主页下载：</p>
+<p>Oracle Fusion Middleware中的Oracle WebLogic Server组件的Web<br>Container子组件存在安全漏洞。攻击者可利用该漏洞未授权读取数据，影响数据的保密性。</p>
+<p>受影响的官方支持版本: 12.1.3.0, 12.2.1.2 和 12.2.1.3</p>
+<p><strong>厂商补丁:</strong></p>
+<p>Oracle已经为此发布了一个安全公告（cpujan2018-3236628）以及相应补丁:</p>
+<p>cpujan2018-3236628：Oracle Critical Patch Update January 2018</p>
+<p>链接：<a href="http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html</a></p>
+<p>CVE编号:CVE-2018-2625</p>
+<h3 id="问题处理-1"><a href="#问题处理-1" class="headerlink" title="问题处理"></a>问题处理</h3><h4 id="1、Jndi数据源"><a href="#1、Jndi数据源" class="headerlink" title="1、Jndi数据源"></a>1、Jndi数据源</h4><p>Jndi数据源读取<br>Weblogic 上定义好数据源后，启动部署HDM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JNDI naming exception: javax.naming.NameNotFoundException。</span><br></pre></td></tr></table></figure>
+<p><strong>解决方法：</strong></p>
+<p>在profiles/dev/config.properties配置文件中修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.jndiName=hbi_dev</span><br></pre></td></tr></table></figure>
+<p>（说明：tomcat 中是db.jndiName= java:comp/env/jdbc/hbi_dev）<br>参考链接：<br><a href="http://eco.hand-china.com/doc/hap/latest/dev_guide/01.getting_start/10_deployment.html" target="_blank" rel="noopener">http://eco.hand-china.com/doc/hap/latest/dev_guide/01.getting_start/10_deployment.html</a></p>
+<h4 id="2、Class文件加载"><a href="#2、Class文件加载" class="headerlink" title="2、Class文件加载"></a>2、Class文件加载</h4><p>直接打war包，Tomcat部署没有问题，但是部署到服务器的Weblogic始终会报错，No<br>SuchMethod<br>Error。因为Tomcat会对部署的.war应用包进行自动监控、解包，所以不会出现提到的问题。而WebLogic并不会自动解包.war，一个文件被打包入了.war文件，就不存在目录结构了，因此需要手动解压.war包，以目录形式在Weblogic中进行部署。</p>
+<p><strong>解决方法：</strong></p>
+<p>1、在根目录下加weblogic.xml，设置优先加载我们项目自己的jar包，就不会去先加载weblogic的jar包，而出现问题。<br>weblogic.xml如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?\&gt;</span><br><span class="line"></span><br><span class="line">&lt;weblogic-web-app xmlns=&quot;http://xmlns.oracle.com/weblogic/weblogic-web-app&quot;</span><br><span class="line"></span><br><span class="line">xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"></span><br><span class="line">xsi:schemaLocation=&quot;http://xmlns.oracle.com/weblogic/weblogic-web-app</span><br><span class="line">http://xmlns.oracle.com/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;container-descriptor&gt;</span><br><span class="line"></span><br><span class="line">&lt;prefer-web-inf-classes&gt;true&lt;/prefer-web-inf-classes&gt;</span><br><span class="line"></span><br><span class="line">&lt;/container-descriptor&gt;</span><br><span class="line"></span><br><span class="line">&lt;/weblogic-web-app&gt;</span><br></pre></td></tr></table></figure>
+<p>2、解压.war包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mdkir core</span><br><span class="line">jar -xvf core.war</span><br></pre></td></tr></table></figure>
+<h4 id="3、xml通配符（可跳过）"><a href="#3、xml通配符（可跳过）" class="headerlink" title="3、xml通配符（可跳过）"></a>3、xml通配符（可跳过）</h4><p>xml文件通配符问题（可跳过）<br> 在Weblogic下，源路径不支持以 ** 或者 * 开头, 必须是一个确定的目录开头,<br>中间,结尾可以使用通配符。<br>解决方法：</p>
+<p>如applicationContext.xml中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package=&quot;\*\*.\*.service&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>修改为类似这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package=&quot;com.\*\*.\*.service&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>另外web.xml,servlet-context.xml等也有类似问题<br>（说明：目前在Weblogic12.2.1.3中core.war按目录部署后不存在通配符问题，如在其他版本中遇到class文件加载不到的问题可按如上解决）</p>
+<h4 id="4、静态资源"><a href="#4、静态资源" class="headerlink" title="4、静态资源"></a>4、静态资源</h4><p>静态资源加载<br>HDM/ resources /下静态资源文件,Weblogic服务器将/resources /<em><br>path尝试通过JAX-RS服务处理这些请求，最终返回404未找到。这个问题导致在/ resources<br>/</em><br>path下的所有静态文件都不会呈现，因为JAX-RS服务“拦截”请求并将其发送到REST服务，而不是呈现静态内容。</p>
+<p><strong>解决方法：</strong></p>
+<p>在web.xml中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">&lt;servlet-name&gt;jersey&lt;/servlet-name&gt;</span><br><span class="line">&lt;servlet-class&gt;com.sun.jersey.spi.container.servlet.ServletContainer&lt;/servlet-class&gt;</span><br><span class="line">&lt;init-param&gt;</span><br><span class="line">&lt;param-name&gt;com.sun.jersey.config.property.packages&lt;/param-name&gt;</span><br><span class="line">&lt;param-value&gt;stupid&lt;/param-value&gt;</span><br><span class="line">&lt;/init-param&gt;</span><br><span class="line">&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">&lt;servlet-name&gt;jersey&lt;/servlet-name&gt;</span><br><span class="line">&lt;url-pattern&gt;/stupid/*&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>参考连接：<br><a href="https://community.oracle.com/thread/4048528" target="_blank" rel="noopener">https://community.oracle.com/thread/4048528</a></p>
+<h4 id="5、上下文"><a href="#5、上下文" class="headerlink" title="5、上下文"></a>5、上下文</h4><p>获取文件上下文<br>真实路径下获取文件异常，是因为Tomcat，JBoss获取根路径后面会加分隔符/，而Weblogic没有。</p>
+<p><strong>解决方法：</strong></p>
+<p>在profiles/dev/config.properties配置文件中添加#file separator</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.separator = /</span><br></pre></td></tr></table></figure>
+<p>（说明：Tomcat部署时file separator值为空，weblogic部署时值为/）</p>
+<p><img src="media/4e40c9fd994ef7e3150aca0dc0aadcd5.png" alt></p>
+<h4 id="6、weblogic启动异常"><a href="#6、weblogic启动异常" class="headerlink" title="6、weblogic启动异常"></a>6、weblogic启动异常</h4><p>Linux下Weblogic启动异常<br>1、若为root用户上传解压core，hdm用户在weblogic启动部署时，会发生空指针异常或Permission<br>denied，是由于用户权限不足导致。</p>
+<p><strong>解决方法：</strong></p>
+<p>su切换至root用户</p>
+<p>chown –R hdm core/</p>
+<p>2、&lt;BEA-141281> \<unable to get file lock, will retry …\></unable></p>
+<p><strong>解决办法：</strong></p>
+<p><strong>一.删掉Domain下的*.lok文件</strong></p>
+<ol>
+<li>删除edit.lok</li>
+</ol>
+<p>进入到domain_home下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/Oracle/Middleware/user_projects/domains/base_domain</span><br></pre></td></tr></table></figure>
+<p>将edit.lok文件删掉rm edit.lok</p>
+<p>2.删除config.lok</p>
+<p>进入到domain_home/config下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/Oracle/Middleware/user_projects/domains/base_domain/config/</span><br></pre></td></tr></table></figure>
+<p>将config.lok文件删掉<br>rm config.lok<br>3.删除AdminServer.lok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/tmp</span><br><span class="line">rm AdminServer.lok</span><br></pre></td></tr></table></figure>
+<p>4.删除EmbeddedLDAP.lok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/u01/Oracle/Middleware/user_projects/domains/base_domain/servers/AdminServer/data/ldap/ldapfiles</span><br><span class="line">rm EmbeddedLDAP.lok</span><br></pre></td></tr></table></figure>
+<p>5.删掉Domain下的*.DAT文件：<br>进入到domain_home当中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/Oracle/Middleware/user_projects/domains/base_domain</span><br></pre></td></tr></table></figure>
+<p>找到文件被删掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[oracle\@base base_domain]\$ find servers/ -name &quot;\*.DAT&quot;</span><br><span class="line">servers/AdminServer/data/store/diagnostics/WLS_DIAGNOSTICS000000.DAT</span><br><span class="line">servers/AdminServer/data/store/default/_WLS_ADMINSERVER000000.DAT</span><br></pre></td></tr></table></figure>
+<p><strong>二、继续报错</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;BEA-280061&gt; \&lt;The persistent store “_WLS_AdminServer” could not be</span><br><span class="line">deployed: weblogic.store.PersistentStoreException: [Store:280105]The</span><br><span class="line">persistent file store “_WLS_AdminServer” cannot open file</span><br><span class="line">_WLS_ADMINSERVER000000.DAT. weblogic.store.PersistentStoreException:</span><br><span class="line">[Store:280105]The persistent file store “_WLS_AdminServer” cannot open file</span><br><span class="line">_WLS_ADMINSERVER000000.DAT. at</span><br><span class="line">weblogic.store.io.file.Heap.open(Heap.java:325)</span><br></pre></td></tr></table></figure>
+<p><strong>解决办法：</strong><br>因为下面两个文件没有删除，删除掉重启即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">servers/AdminServer/data/store/diagnostics/WLS_DIAGNOSTICS000000.DAT</span><br><span class="line">servers/AdminServer/data/store/default/_WLS_ADMINSERVER000000.DAT</span><br></pre></td></tr></table></figure>
+<h4 id="7、GC"><a href="#7、GC" class="headerlink" title="7、GC"></a>7、GC</h4><p>GC overhead limit exceeded</p>
+<p><img src="media/cfca8960a95f85686c91580d9f310051.png" alt></p>
+<p>参考文档：<a href="https://blog.csdn.net/democreen/article/details/82901650" target="_blank" rel="noopener">https://blog.csdn.net/democreen/article/details/82901650</a></p>
+<p><a href="https://happyqing.iteye.com/blog/1933362" target="_blank" rel="noopener">https://happyqing.iteye.com/blog/1933362</a></p>
+<p><strong>解决方法：</strong></p>
+<p>修改domain域下面的配置文件setDomainEnv.sh中参数的值：<br>WLS_MEM_ARGS_64BIT=”-Xms2048m -Xmx2048m”<br>WLS_MEM_ARGS_32BIT=”-Xms2048m -Xmx2048m”<br>文件路径/home/app/Oracle/Middleware/user_projects/domains/hdm_domain/bin<br><img src="media/318da248408de3f15954155da2483a8e.png" alt></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column col-3 hide-lg docs-toc-section">
+            <div class="container px-0">
+                <div id="post-toc">
+                    
+                        <p class="h4 text-bold">目录</p>
+                        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#疑难问题集"><span class="post-toc-text">疑难问题集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tomcat部署"><span class="post-toc-text">tomcat部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题处理"><span class="post-toc-text">问题处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、redis无法正常启停"><span class="post-toc-text">1、redis无法正常启停</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、tomcat启动报错too-low-setting-for-Xss"><span class="post-toc-text">2、tomcat启动报错too low setting for -Xss</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、404"><span class="post-toc-text">3、404</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、nginx-port"><span class="post-toc-text">5、nginx port</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#weblogic部署"><span class="post-toc-text">weblogic部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#weblogic补丁"><span class="post-toc-text">weblogic补丁</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题处理-1"><span class="post-toc-text">问题处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、Jndi数据源"><span class="post-toc-text">1、Jndi数据源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、Class文件加载"><span class="post-toc-text">2、Class文件加载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、xml通配符（可跳过）"><span class="post-toc-text">3、xml通配符（可跳过）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、静态资源"><span class="post-toc-text">4、静态资源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、上下文"><span class="post-toc-text">5、上下文</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6、weblogic启动异常"><span class="post-toc-text">6、weblogic启动异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7、GC"><span class="post-toc-text">7、GC</span></a></li></ol></li></ol></li></ol></li></ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <p class="mb-2"><a href="https://hand-mabu.github.io/hexo-mabu-doc/" target="_blank">Home</a> · <a href="https://github.com/hand-mabu/hexo-mabu-doc" target="_blank">GitHub</a>
+    </p><p>Designed and built with by <a href="https://github.com/hand-mabu" target="_blank">MABU</a>. Licensed under the <a href="https://github.com/hand-mabu/hexo-mabu-doc/blob/dev/LICENSE" target="_blank">GPL V3 License</a>.</p>
+</footer>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/hdm-installation-doc/jquery.min.js"></script>
+    <script src="/hdm-installation-doc/index.js"></script>
+    <script src="/hdm-installation-doc/local-search.min.js"></script>
+    <script>
+        searchFunc('/hdm-installation-doc/search.json')
+    </script>
+</body>
+
+</html>

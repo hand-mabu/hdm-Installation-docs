@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <title>linux | MabuDoc Theme</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <meta name="description" content="Modern, powerful and simple theme for Hexo.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/style.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/lib/prism/prism-ghcolors.min.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hand-mabu.github.io/hexo-mabu-doc/">
+    <meta property="og:title" content="介绍 | MabuDoc Theme">
+    <meta property="og:description" content="Modern Simlpe Powerful Theme for hexo">
+    <meta property="og:image" content>
+</head>
+
+<body>
+    
+<header class="pt-2 pb-2">
+    <div class="container grid-lg navbar pt-2 pb-2">
+        <section class="navbar-section">
+            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+            <a class="navbar-icon" href="https://hand-mabu.github.io/hexo-mabu-doc/">
+                <img src="/hdm-installation-doc/assets/img/hexo-theme-suka.png">
+            </a>
+            <a href="https://hand-mabu.github.io/hexo-mabu-doc/" class="btn btn-link">
+                MabuDoc Theme</a>
+        </section>
+        <section class="navbar-section">
+            
+            <a href="/hdm-installation-doc/linux/" class="btn btn-link navbar-link">English</a>
+            
+        </section>
+    </div>
+</header>
+
+    <div class="off-canvas off-canvas-sidebar-show">
+
+        <div id="sidebar" class="off-canvas-sidebar">
+            
+
+<div class="docs-nav">
+    <div class="docs-search has-icon-left">
+        <i class="form-icon icon icon-search"></i>
+        <input id="search-field" class="form-input" type="text" placeholder="Search...">
+    </div>
+    <div id="search-result"></div>
+    <ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/">
+        手册简介
+    </a>
+</li>
+
+<li class="nav-item active" style>
+    <a href="/hdm-installation-doc/linux/">
+        Linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows/">
+        windows版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="javascript:void(0);">
+        疑难问题
+    </a>
+</li><ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux_question/">
+        linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows_question/">
+        windows版
+    </a>
+</li></ul></ul>
+    <!-- <ul class="nav"> -->
+    <!-- 
+        <li class="nav-item">
+            <a href="/hdm-installation-doc/config/">nav.config</a>
+        </li>
+    -->
+    <!-- </ul> -->
+</div>
+        </div>
+
+        <a class="off-canvas-overlay" href="#close"></a>
+
+        <div class="off-canvas-content">
+            <div class="container px-0">
+                
+
+
+
+
+<div class="docs-header">
+    <div class="docs-header-wrapper">
+        <div class="title-wrapper">
+            <h1 class="docs-header-title mb-1">linux</h1>
+            
+                <p class="h4 mb-2">Verison 1.0.0</p>
+            
+        </div>
+        <!-- <span class="label label-rounded bg-dark mt-2">
+            <a class="docs-github" href="https://github.com/theme-suka/docs/tree/master/source/linux.md" target="_blank">在 GitHub 上编辑</a>
+        </span> -->
+    </div>
+</div>
+
+<div class="docs-content">
+    <div class="columns">
+        <div class="column col-9 col-lg-12 docs-content-section">
+            <div class="container px-0">
+                <div id="post-content">
+                    <h1 id="安装应用软件"><a href="#安装应用软件" class="headerlink" title="安装应用软件"></a>安装应用软件</h1><h2 id="介质"><a href="#介质" class="headerlink" title="介质"></a>介质</h2><p><strong>程序目录</strong></p>
+<p>mkdir -p /u01/software<br>chown -R hdm:dba /u01<br><strong>下载介质</strong><br>hdm用户上传介质<br>apache-tomcat-8.5.8.tar.gz<br>fmw_12.2.1.3.0_wls_Disk1_1of1.zip<br>vnc-4_1_2-x86_win32_viewer.exe<br>jdk-8u181-linux-x64.tar.gz<br>apache-maven-3.3.9-bin.tar.gz<br>redis-3.2.9.tar.gz<br>core.war<br>core-db.zip</p>
+<h2 id="配置java环境"><a href="#配置java环境" class="headerlink" title="配置java环境"></a>配置java环境</h2><p>新建java路径</p>
+<p>mkdir –p /usr/java</p>
+<p>解压jdk到java路径下</p>
+<p>[root\@HDM software]# tar -xzvf jdk-8u181-linux-x64.tar.gz -C /usr/java/</p>
+<p>设置hdm用户的java变量。<br>编辑.bash_profile，添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/java/jdk1.8.0_181/bin:\$PATH:\$HOME/bin</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_181</span><br><span class="line"></span><br><span class="line">export JRE_HOME=/usr/java/jdk1.8.0_131/jre</span><br></pre></td></tr></table></figure></p>
+<p>重新加载环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdm\@HDM \~]\$ source .bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>检查是否生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdm\@HDM \~]\$ java –version</span><br></pre></td></tr></table></figure></p>
+<p><img src="../source/assets/img/jdk_linux.png" alt></p>
+<p>已经生效</p>
+<h2 id="安装tomcat-可选"><a href="#安装tomcat-可选" class="headerlink" title="安装tomcat(可选)"></a>安装tomcat(可选)</h2><p><strong>下载tomcat</strong><br>本次安装的tomcat介质：apache-tomcat-8.5.8.tar.gz<br><strong>安装tomcat</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /u01/HDMcd /u01/HDMtar -zxvf /u01/software/apache-tomcat-8.5.8.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p><strong>启动tomcat</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<pre><code>[hdm@hdm01 bin]$ /u01/HDM/apache-tomcat-8.5.8/bin/startup.sh
+Using CATALINA_BASE:   /u01/HDM/apache-tomcat-8.5.8
+Using CATALINA_HOME:   /u01/HDM/apache-tomcat-8.5.8
+Using CATALINA_TMPDIR: /u01/HDM/apache-tomcat-8.5.8/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /u01/HDM/apache-tomcat-8.5.8/bin/bootstrap.jar:/u01/HDM/apache-tomcat-8.5.8/bin/tomcat-juli.jar
+Tomcat started.
+[hdm@hdm01 bin]$
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">启动port端口为8080对应的停止脚本</span><br></pre></td></tr></table></figure>
+
+/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 安装weblogic(可选)</span><br><span class="line"></span><br><span class="line">**weblogic软件**</span><br><span class="line"></span><br><span class="line">在官网下载weblogic软件，上传服务器，解压安装。用户hdm启动vnc，在vnc中安装weblogic</span><br></pre></td></tr></table></figure>
+
+[hdm\@HDM software]\$ unzip fmw_12.2.1.3.0_wls_Disk1_1of1.zip
+
+[hdm\@HDM software]\$ java -jar fmw_12.2.1.3.0_wls.jar
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic1_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic2_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic3_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic4_install_linux.png)</span><br></pre></td></tr></table></figure>
+
+/u01/weblogic/Oracle/Middleware/Oracle_Home
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic5_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic6_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic7_install_linux.png)</span><br><span class="line"></span><br><span class="line">**创建配置新的域**</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic8_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic9_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic10_install_linux.png)</span><br><span class="line"></span><br><span class="line">密码设置为：********</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic11_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic12_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic13_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic14_install_linux.png)</span><br><span class="line"></span><br><span class="line">输入上面的账户密码：weblogic/********</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic15_install_linux.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic16_install_linux.png)</span><br><span class="line"></span><br><span class="line">安装完成</span><br><span class="line"></span><br><span class="line">**信息访问**</span><br><span class="line"></span><br><span class="line">**启停**</span><br><span class="line"></span><br><span class="line">启动：</span><br></pre></td></tr></table></figure>
+
+[hdm\@HDM \~]\$ cd
+/u01/weblogic/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/bin/
+./startWebLogic.sh
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">用这个命令进程不会再后台运行，也就是启动命令的shell窗口不能管理，可以通过下面的方式来启动</span><br></pre></td></tr></table></figure>
+
+ nohup sh ./startWebLogic.sh &amp;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">停止：</span><br></pre></td></tr></table></figure>
+
+./stopWebLogic.sh
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**Weblogic访问信息**</span><br><span class="line">Login URL:http://172.16.2.213:7001/console</span><br><span class="line">用户密码:weblogic/\*\*\*\*\*\*</span><br><span class="line">## 安装redis</span><br><span class="line">**下载redis**</span><br><span class="line">安装的redis介质：redis-3.2.5.tar.gz</span><br><span class="line">**安装redis**</span><br></pre></td></tr></table></figure>
+
+cd /u01/HDM
+tar -zxvf /u01/software/redis-3.2.5.tar.gz
+cd /u01/HDM/redis-3.2.5
+sudo make 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">日志会留下如下：</span><br></pre></td></tr></table></figure>
+
+make[1]: Leaving directory `/u01/HDM/redis-3.2.5/src&apos;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+cd /u01/HDM/redis-3.2.5/src
+mkdir /u01/HDM/redis-3.2.5/redis
+sudo make install  PREFIX=/u01/HDM/redis-3.2.5/redis
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+日志：
+Hint: It&apos;s a good idea to run &apos;make test&apos; ;)
+    INSTALL install
+    INSTALL install
+    INSTALL install
+    INSTALL install
+    INSTALL install
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**配置文件**先新建文件夹mkdir</span><br></pre></td></tr></table></figure>
+
+/u01/HDM/redis-3.2.5/logs
+vi /u01/HDM/redis-3.2.5/redis.conf
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">启动port端口为6379将daemonize的值改为yeslogs</span><br><span class="line"></span><br><span class="line">```pidfile /u01/HDM/redis-3.2.5/logs/redis_6379.pidlogfile &quot;/u01/HDM/redis-3.2.5/logs/redis.log&quot;dir /u01/HDM/redis-3.2.5/logs</span><br></pre></td></tr></table></figure>
+
+**启动redis**
+Redis放在服务器后台运行，修改配置文件属性：
+将daemonize的值改为yes （默认值为no）
+
+![](../source/assets/img/redis1_linux.png)
+
+启动命令：
+
+</code></pre><p>/u01/HDM/redis-3.2.5/redis/bin/redis-server  /u01/HDM/redis-3.2.5/redis.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">停止命令：</span><br><span class="line"></span><br><span class="line">```/u01/HDM/redis-3.2.5/redis/bin/redis-cli shutdown　　或者pkill redis-server</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h2><p><strong>说明</strong><br>安装maven<br><strong>下载maven</strong><br>URL: <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a><br>本次安装的maven介质如下：apache-maven-3.3.9-bin.tar.gz<br><strong>安装maven</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/HDMtar -zxvf /u01/software/apache-maven-3.3.9-bin.tar.gz</span><br></pre></td></tr></table></figure>
+<p><strong>永久环境变量</strong><br>编辑.bash_profile</p>
+<pre><code>vi /home/hdm/.bash_profile
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">添加如下内容：</span><br><span class="line">```export MAVEN_HOME= /u01/HDM/apache-maven-3.3.9export PATH=$&#123;MAVEN_HOME&#125;/bin:$&#123;PATH&#125;export PATH=$PATH:/u01/HDM/redis-3.2.5/redis/binexport CATALINA_HOME=/u01/HDM/apache-tomcat-8.5.8export CATALINE_BASH=/u01/HDM/apache-tomcat-8.5.8</span><br></pre></td></tr></table></figure>
+
+重新加载环境变量
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdm\@HDM \~]\$ source .bash_profile</span><br></pre></td></tr></table></figure>
+
+**安装后验证**
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[hdm@HDM ~]$ mvn -vApache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T00:41:47+08:00)Maven home: /u01/HDM/apache-maven-3.3.9Java version: 1.8.0_111, vendor: Oracle CorporationJava home: /u01/HDM/jdk1.8.0_111/jreDefault locale: en_US, platform encoding: UTF-8OS name: &quot;linux&quot;, version: &quot;2.6.32-358.el6.x86_64&quot;, arch: &quot;amd64&quot;, family: &quot;unix&quot;</span><br></pre></td></tr></table></figure>
+
+注：修改文件后要想马上生效还要运行$ source /home/hdm/.bash_profile不然只能在下次重进此用户时生效。
+# 配置
+## HDM准备
+### 配置数据库
+**创建表空间**
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLESPACE &quot;HDM_DATA&quot;     LOGGING     DATAFILE &apos;/u01/app/oracle/oradata/HYTST/hdm_data01.dbf&apos; SIZE 1000M     AUTOEXTEND     ON NEXT  100M MAXSIZE  8000M EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT  AUTO;</span><br></pre></td></tr></table></figure>
+
+**创建数据库用户**
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user hdm identified by z8MhZismTJ default tablespace HDM_DATA TEMPORARY TABLESPACE &quot;TEMP&quot;;</span><br></pre></td></tr></table></figure>
+
+**授权**
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant connect ,resource,create view,create any directory ,create database link to hdm;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /u01/HDMunzip /u01/software/core-db.zip[hdm@hdm01 core-db]$ pwd/u01/HDM/core-db</span><br></pre></td></tr></table></figure>
+
+**编译（需要连接外网)**
+(该操作只需要在一台机器上执行，第二个节点可以考虑直接拷贝core.war包)
+在源码文件夹下执行：mvn clean install
+例：
+
+</code></pre><p>cd  /u01/HDM/core-db<br>mvn clean install<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(日志显示download的包，存放在当前用户/home/user/.m2下，该部分可以拷贝)</span><br><span class="line">**初始化数据到hdm用户（只需要在一台机器上执行）**</span><br><span class="line">编译成功后，执行初始化数据库命令：</span><br><span class="line"></span><br><span class="line">```mvn process-resources -D skipLiquibaseRun=false -D db.driver=oracle.jdbc.driver.OracleDriver -D db.url=jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST -Ddb.user=hdm -Ddb.password=z8MhZismTJ</span><br></pre></td></tr></table></figure></p>
+<pre><code>[INFO] Reactor Summary:
+[INFO] core-db ............................................ SUCCESS [  1.073 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 39.836 s
+[INFO] Finished at: 2017-02-09T09:55:50+08:00
+[INFO] Final Memory: 68M/974M
+[INFO] ------------------------------------------------------------------------
+[hdm@hdm01 core-db]$
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## tomcat部署HDM</span><br><span class="line">**修改tomcat**</span><br><span class="line">修改tomcat目录（/u01/HDM/apache-tomcat-8.5.8/conf）下的conf/context.xml,在最后面添加如下配置：</span><br><span class="line"></span><br><span class="line">```&lt;Resource auth=&quot;Container&quot; driverClassName=&quot;oracle.jdbc.driver.OracleDriver&quot; name=&quot;jdbc/hbi_dev&quot; type=&quot;javax.sql.DataSource&quot; url=&quot;jdbc:oracle:thin:@ys-dbtest.jingpai.com:1531:HYTST&quot; username=&quot;hdm&quot; password=&quot;z8MhZismTJ&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+
+本次截图：
+**拷贝war包**
+将源代码目录下/core/target/core.war拷贝到tomcat的webapps目录下，
+注意：模板文件上传路径默认如下：
+
+![](../source/assets/img/core_linux.png)
+
+需要更改文件存储路径的，可修改配置文件，修改方式为：可将core.war先重命名为core.zip，找到core.zip\WEB-INF\classes路径下config.properties文件，进行相应修改。若修改此配置文件，则以后每次更新系统，都需要修改配置文件。
+
+</code></pre><p>cp /u01/HDM/hbiparent/core/target/core.war /u01/HDM/apache-tomcat-8.5.8/webapps<br>$ls -l /u01/HDM/apache-tomcat-8.5.8/webapps/core.war<br>-rw-r–r–. 1 hdm dba 127410530 Feb  9 10:04 /u01/HDM/apache-tomcat-8.5.8/webapps/core.war<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**访问url（两个节点同样的安装方式）**</span><br><span class="line">通过http://&lt;ip&gt;:&lt;prot&gt;/core访问hdm，http://172.16.2.112:8080/corehttp://172.16.2.113:8080/core初始用户admin/admin</span><br><span class="line">## weblogic部署HDM</span><br><span class="line">HDM应用的部署是在weblogic控制台进行的。</span><br><span class="line">**weblogic登陆**登录地址：&lt;http://172.16.2.213:7001/console&gt;</span><br><span class="line">用户密码weblogic/\*\*\*\*\*\*</span><br><span class="line">### 数据源配置</span><br><span class="line">weblogic主页--服务--数据源</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic_datasource.png)</span><br><span class="line"></span><br><span class="line">新建数据源</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic2_datasource.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic3_datasource.png)</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic4_datasource.png)</span><br><span class="line"></span><br><span class="line">依次填写数据库名称、主机名、端口号、数据库用户名、口令</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic5_datasource.png)</span><br><span class="line"></span><br><span class="line">(注：以上信息根据实际情况填写)</span><br><span class="line"></span><br><span class="line">下一步确认数据库信息无误后，下一步勾选服务器</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic6_datasource.png)</span><br><span class="line"></span><br><span class="line">点击完成后，测试数据源</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic7_datasource.png)</span><br><span class="line"></span><br><span class="line">数据源创建成功。</span><br><span class="line">### 应用部署</span><br><span class="line"></span><br><span class="line">在域结构中选择base_domain部署</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic1_publish.png)</span><br><span class="line"></span><br><span class="line">在右侧的部署概要页面选择按钮：安装</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic2_publish.png)</span><br><span class="line"></span><br><span class="line">下一步选择HDM应用所在core目录</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic3_publish.png)</span><br><span class="line"></span><br><span class="line">然后默认下一步</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic4_publish.png)</span><br><span class="line"></span><br><span class="line">然后默认下一步</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/weblogic5_publish.png)</span><br><span class="line"></span><br><span class="line">点击下一步，复查选项后点击完成部署。</span><br><span class="line"></span><br><span class="line">**HDM访问**</span><br><span class="line">http://服务器ip:7001/core/login</span><br><span class="line"></span><br><span class="line">账号密码 admin/admin</span><br><span class="line"># 服务管理</span><br><span class="line">## tomcat</span><br><span class="line">### 启动脚本</span><br><span class="line">StartHDM.sh</span><br></pre></td></tr></table></figure></p>
+<p>#Start tomcat<br>/u01/HDM/apache-tomcat-8.5.8/bin/startup.sh &amp;</p>
+<p>#Start Redis<br>/u01/software/redis-3.2.5/redis /bin/redis-server /u01/software/redis-3.2.5/redis.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 停止脚本</span><br><span class="line">StopHDM.sh</span><br></pre></td></tr></table></figure></p>
+<p>#Stop tomcat<br>/u01/HDM/apache-tomcat-8.5.8/bin/shutdown.sh</p>
+<p>#Stop Redis<br>/u01/software/redis-3.2.5/redis /bin/redis-cli shutdown<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## weblogic</span><br><span class="line">### 启动脚本</span><br><span class="line"></span><br><span class="line">StartHDM.sh</span><br></pre></td></tr></table></figure></p>
+<p>#Start Weblogic<br>cd /u01/weblogic/Oracle/Middleware/Oracle_Home/user_projects/domains/ base_domain/bin/<br>nohup ./startWebLogic.sh &amp; </p>
+<p>#Start Redis<br>/u01/software/redis-3.2.5/redis /bin/redis-server /u01/software/redis-3.2.5/redis.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 停止脚本</span><br><span class="line"></span><br><span class="line">StopHDM.sh</span><br></pre></td></tr></table></figure></p>
+<p>#Stop Weblogic<br>cd /u01/weblogic/Oracle/Middleware/Oracle_Home/user_projects/domains/ base_domain/bin/<br>nohup ./stopWebLogic.sh &amp; </p>
+<p>#Stop Redis<br>/u01/software/redis-3.2.5/redis /bin/redis-cli shutdown<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">## HDM备份恢复</span><br><span class="line">### 应用层备份恢复</span><br><span class="line">导出：</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/recover1.png)</span><br><span class="line"></span><br><span class="line">导入：</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/recover2.png)</span><br><span class="line"></span><br><span class="line">（主数据相关功能均有导入导出）</span><br><span class="line">### 模板备份</span><br><span class="line">把/u01/hdm/template_excel路径下数据模板批量拷贝或者在数据录入打开表单点击模板下载备份到svn、vss或其他项目文档管理工具</span><br><span class="line"></span><br><span class="line">![](../source/assets/img/recover3.png)</span><br><span class="line"></span><br><span class="line">### 数据库备份恢复</span><br><span class="line">导出命令：</span><br><span class="line">expdp hdm/hdmwelcome! DUMPFILE=HDM_0330.dmp  DIRECTORY=DATA_PUMP_DIR SCHEMAS=HDM LOGFILE=HDM_0330.log;</span><br><span class="line">导入命令：</span><br><span class="line">impdp scott/tiger DIRECTORY=dpdata1 DUMPFILE=expdp.dmp SCHEMAS=scott;</span><br><span class="line"></span><br><span class="line">## 负载均衡</span><br><span class="line">**下载软件**</span><br><span class="line">从http://nginx.org/en/download.html下载nginxnginx-1.14.0.tar.gzroot用户操作：创建如下路径，并将介质上传到hdm01节点/lb/software解压： </span><br><span class="line"></span><br><span class="line">```cd /lb/softwaretar -zxvf nginx-1.14.0.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p><strong>安装nginx</strong><br>root用户操作：<br>安装必须rpm包</p>
+<pre><code>yum -y install gcc gcc-c++ make libtool zlib zlib-devel openssl openssl-devel pcre pcre-devel
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![Alt text](../source/assets/img/nginx1_linux.png)</span><br><span class="line">安装nginx</span><br><span class="line"></span><br><span class="line">```cd /lb/software/nginx-1.14.0./configure --prefix=/lb/nginx \--with-http_stub_status_module \--with-http_ssl_module</span><br></pre></td></tr></table></figure>
+
+
+![Alt text](../source/assets/img/nginx2_linux.png)
+
+ make
+
+![Alt text](../source/assets/img/nginx3_linux.png)
+
+ make install
+
+![Alt text](../source/assets/img/nginx4_linux.png)
+
+安装完成查看结果
+
+![Alt text](../source/assets/img/nginx5_linux.png)
+
+**nginx服务启停**
+root用户操作：
+
+启动nginx
+
+</code></pre><p> /lb/nginx/sbin/nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">关闭nginx（会默认重启）</span><br><span class="line"></span><br><span class="line">``` /lb/nginx/sbin/nginx -s stop</span><br></pre></td></tr></table></figure></p>
+<p>登录测试(缺省端口为80)</p>
+<p><img src="../source/assets/img/nginx6_linux.png" alt="Alt text"></p>
+<p>设置nginx开机自动启动—【待验证】<br>创建/etc/init.d/nginx文件，内容如下:</p>
+<pre><code> chmod 755 /etc/init.d/nginx
+ chkconfig --add nginx
+ chkconfig nginx on
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**配置nginx**</span><br><span class="line">root用户操作：配置nginx，修改/lb/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line">```upstream  ys-hdmtest1.jingpai.com &#123;    ip_hash;    server 172.16.2.112:8080;    server 172.16.2.113:8080;    &#125;server &#123;        listen       80;        server_name  location;        #charset koi8-r;        #access_log  logs/host.access.log  main;        location / &#123;            proxy_pass http://ys-hdmtest1.jingpai.com;            proxy_set_header Host $host;            proxy_set_header X-Real-IP $remote_addr;            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;            root   html;            index  index.html index.htm;        &#125;</span><br></pre></td></tr></table></figure>
+
+**访问url（nginx在hdm01设置后）**
+访问hdm，
+http://ys-hdmtest1.jingpai.com/core
+初始用户admin/admin
+
+## 共享文件夹设置
+&gt;此操作是做了负载均衡的项目需要完成的，用于模板上传文件的共享，未做负载均衡的项目不需要执行以下操作。此处假设模板上传路径（拷贝war包时配置的路径）为/u01/hdm/template_excel，在hdm用户下创建该目录(每台服务器都需要创建)。
+
+**sh查看本机是否安装了nfs服务器**
+rpm -qa|grep nfs
+rpm -qa|grep rpcbind
+
+![](../source/assets/img/sharing_linux.png)
+
+出现以上提示信息，则已经安装了nfs服务器，否则需要手动安装。
+yum install rpcbind
+yum install  nfs-utils
+**修改nfs主配置文件/etc/exports**
+创建用于共享的目录
+mkdir /u01/hdm/sharefile //(此命令在hdm用户下执行，其余均在root用户下执行)
+vi /etc/exports
+添加以下信息
+
+![](../source/assets/img/sharing2_linux.png)
+
+其中，
+/u01/hdm/sharefile:允许客户端挂载的目录，可添加任意多个，如果不设置，服务器将不允许客户端挂载。
+172.16.2.112,172.16.2.113:允许该IP的主机挂载该目录（可设置为范围比如：192.168.10.*），地址可以使用完整IP或网段，例如10.0.0.8或10.0.0.0/24，10.0.0.0/255.255.255.0当然也可以地址可以使用主机名，DNS解析的和本地/etc/hosts解析的都行，支持通配符，如：*.chengyongxu.com。
+
+</code></pre><p>括号内的 :一些权限设置<br>   rw：read-write，可读写；    注意，仅仅这里设置成读写客户端还是不能正常写入，还要正确地设置共享目录的权限<br>   ro：read-only，只读；<br>   sync：文件同时写入硬盘和内存；<br>   async：文件暂存于内存，而不是直接写入内存；<br>   no_root_squash：NFS客户端连接服务端时如果使用的是root的话，那么对服务端分享的目录来说，也拥有root权限。显然开启这项是不安全的。<br>   root_squash：NFS客户端连接服务端时如果使用的是root的话，那么对服务端分享的目录来说，拥有匿名用户权限，通常他将使用nobody或nfsnobody身份；<br>   all_squash：不论NFS客户端连接服务端时使用什么用户，对服务端分享的目录来说都是拥有匿名用户权限；<br>   anonuid：匿名用户的UID值，通常是nobody或nfsnobody，可以在此处自行设定；<br>   anongid：匿名用户的GID值。<br><code>`</code></p>
+<p><strong>启用nfs相关服务程序</strong><br>service rpcbind start<br>service nfs start<br>设置开机自启<br>chkconfig –list nfs<br>chkconfig –list rpcbind<br>查看已经声明过的可被挂载的目录</p>
+<p><img src="../source/assets/img/sharing3_linux.png" alt></p>
+<p>注意：需要将服务器防火墙关闭。<br><strong>客户机操作</strong><br>从客户机查看服务端的nfs共享资源列表<br>showmount -e 172.16.2.113</p>
+<p><img src="../source/assets/img/sharing4_linux.png" alt></p>
+<p>从客户机172.16.2.112上挂载/u01/hdm/sharefile共享。<br>mount 172.16.2.113:/u01/hdm/sharefile /u01/hdm/template_excel //将共享目录挂载到本地/u01/hdm/template_excel目录下<br>查看挂载信息<br>df -h</p>
+<p><img src="../source/assets/img/sharing5_linux.png" alt></p>
+<p><strong>设置开机后自动挂载nfs共享资源（客户机操作）</strong><br>vi /etc/fstab<br>添加以下语句：<br>172.16.2.113:/u01/hdm/sharefile /u01/hdm/template_excel nfs defaults 0 0</p>
+<p><img src="../source/assets/img/sharing6_linux.png" alt></p>
+<p>mount -a  //无提示信息则说明挂载成功</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column col-3 hide-lg docs-toc-section">
+            <div class="container px-0">
+                <div id="post-toc">
+                    
+                        <p class="h4 text-bold">目录</p>
+                        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装应用软件"><span class="post-toc-text">安装应用软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介质"><span class="post-toc-text">介质</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置java环境"><span class="post-toc-text">配置java环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装tomcat-可选"><span class="post-toc-text">安装tomcat(可选)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装maven"><span class="post-toc-text">安装maven</span></a></li></ol></li></ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <p class="mb-2"><a href="https://hand-mabu.github.io/hexo-mabu-doc/" target="_blank">Home</a> · <a href="https://github.com/hand-mabu/hexo-mabu-doc" target="_blank">GitHub</a>
+    </p><p>Designed and built with by <a href="https://github.com/hand-mabu" target="_blank">MABU</a>. Licensed under the <a href="https://github.com/hand-mabu/hexo-mabu-doc/blob/dev/LICENSE" target="_blank">GPL V3 License</a>.</p>
+</footer>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/hdm-installation-doc/jquery.min.js"></script>
+    <script src="/hdm-installation-doc/index.js"></script>
+    <script src="/hdm-installation-doc/local-search.min.js"></script>
+    <script>
+        searchFunc('/hdm-installation-doc/search.json')
+    </script>
+</body>
+
+</html>

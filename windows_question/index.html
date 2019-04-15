@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <title>windows版疑难问题集 | MabuDoc Theme</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <meta name="description" content="Modern, powerful and simple theme for Hexo.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/style.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/lib/prism/prism-ghcolors.min.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hand-mabu.github.io/hexo-mabu-doc/">
+    <meta property="og:title" content="介绍 | MabuDoc Theme">
+    <meta property="og:description" content="Modern Simlpe Powerful Theme for hexo">
+    <meta property="og:image" content>
+</head>
+
+<body>
+    
+<header class="pt-2 pb-2">
+    <div class="container grid-lg navbar pt-2 pb-2">
+        <section class="navbar-section">
+            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+            <a class="navbar-icon" href="https://hand-mabu.github.io/hexo-mabu-doc/">
+                <img src="/hdm-installation-doc/assets/img/hexo-theme-suka.png">
+            </a>
+            <a href="https://hand-mabu.github.io/hexo-mabu-doc/" class="btn btn-link">
+                MabuDoc Theme</a>
+        </section>
+        <section class="navbar-section">
+            
+            <a href="/hdm-installation-doc/windows_question/" class="btn btn-link navbar-link">English</a>
+            
+        </section>
+    </div>
+</header>
+
+    <div class="off-canvas off-canvas-sidebar-show">
+
+        <div id="sidebar" class="off-canvas-sidebar">
+            
+
+<div class="docs-nav">
+    <div class="docs-search has-icon-left">
+        <i class="form-icon icon icon-search"></i>
+        <input id="search-field" class="form-input" type="text" placeholder="Search...">
+    </div>
+    <div id="search-result"></div>
+    <ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/">
+        手册简介
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux/">
+        Linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows/">
+        windows版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="javascript:void(0);">
+        疑难问题
+    </a>
+</li><ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux_question/">
+        linux版
+    </a>
+</li>
+
+<li class="nav-item active" style>
+    <a href="/hdm-installation-doc/windows_question/">
+        windows版
+    </a>
+</li></ul></ul>
+    <!-- <ul class="nav"> -->
+    <!-- 
+        <li class="nav-item">
+            <a href="/hdm-installation-doc/config/">nav.config</a>
+        </li>
+    -->
+    <!-- </ul> -->
+</div>
+        </div>
+
+        <a class="off-canvas-overlay" href="#close"></a>
+
+        <div class="off-canvas-content">
+            <div class="container px-0">
+                
+
+
+
+
+<div class="docs-header">
+    <div class="docs-header-wrapper">
+        <div class="title-wrapper">
+            <h1 class="docs-header-title mb-1">windows版疑难问题集</h1>
+            
+                <p class="h4 mb-2">Verison 1.0.0</p>
+            
+        </div>
+        <!-- <span class="label label-rounded bg-dark mt-2">
+            <a class="docs-github" href="https://github.com/theme-suka/docs/tree/master/source/windows_question.md" target="_blank">在 GitHub 上编辑</a>
+        </span> -->
+    </div>
+</div>
+
+<div class="docs-content">
+    <div class="columns">
+        <div class="column col-9 col-lg-12 docs-content-section">
+            <div class="container px-0">
+                <div id="post-content">
+                    <h1 id="疑难问题集"><a href="#疑难问题集" class="headerlink" title="疑难问题集"></a>疑难问题集</h1><h2 id="错误1-redis无法正常启停"><a href="#错误1-redis无法正常启停" class="headerlink" title="错误1 redis无法正常启停"></a>错误1 redis无法正常启停</h2><p>####问题1<br>权限不够，导致redis无法正常启停</p>
+<p>#####错误日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2481:M 08 Feb 15:07:57.716 # User requested shutdown...2481:M 08 Feb 15:07:57.716 * Saving the final RDB snapshot before exiting.2481:M 08 Feb 15:07:57.716 # Failed opening the RDB file dump.rdb (in server root dir /u01/HDM/redis-3.2.5/redis/bin) for saving: Permission denied2481:M 08 Feb 15:07:57.716 # Error trying to save the DB, can&apos;t exit.</span><br></pre></td></tr></table></figure></p>
+<p>#####处理方式<br>原因是由于hdm无权限写dump文件，修改dump路径可以成功解决该问题<br>修改配置文件/u01/HDM/redis-3.2.5/redis.conf的dump路径<br><strong>dir /u01/HDM/redis-3.2.5/logs</strong></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column col-3 hide-lg docs-toc-section">
+            <div class="container px-0">
+                <div id="post-toc">
+                    
+                        <p class="h4 text-bold">目录</p>
+                        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#疑难问题集"><span class="post-toc-text">疑难问题集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误1-redis无法正常启停"><span class="post-toc-text">错误1 redis无法正常启停</span></a></li></ol></li></ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <p class="mb-2"><a href="https://hand-mabu.github.io/hexo-mabu-doc/" target="_blank">Home</a> · <a href="https://github.com/hand-mabu/hexo-mabu-doc" target="_blank">GitHub</a>
+    </p><p>Designed and built with by <a href="https://github.com/hand-mabu" target="_blank">MABU</a>. Licensed under the <a href="https://github.com/hand-mabu/hexo-mabu-doc/blob/dev/LICENSE" target="_blank">GPL V3 License</a>.</p>
+</footer>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/hdm-installation-doc/jquery.min.js"></script>
+    <script src="/hdm-installation-doc/index.js"></script>
+    <script src="/hdm-installation-doc/local-search.min.js"></script>
+    <script>
+        searchFunc('/hdm-installation-doc/search.json')
+    </script>
+</body>
+
+</html>

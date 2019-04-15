@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <title>windows | MabuDoc Theme</title>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <meta name="description" content="Modern, powerful and simple theme for Hexo.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/img/suka-favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.3/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/style.min.css">
+    <link rel="stylesheet" href="/hdm-installation-doc/markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sukkaw/hexo-theme-suka@0.1.0/source/lib/prism/prism-ghcolors.min.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hand-mabu.github.io/hexo-mabu-doc/">
+    <meta property="og:title" content="介绍 | MabuDoc Theme">
+    <meta property="og:description" content="Modern Simlpe Powerful Theme for hexo">
+    <meta property="og:image" content>
+</head>
+
+<body>
+    
+<header class="pt-2 pb-2">
+    <div class="container grid-lg navbar pt-2 pb-2">
+        <section class="navbar-section">
+            <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
+            <a class="navbar-icon" href="https://hand-mabu.github.io/hexo-mabu-doc/">
+                <img src="/hdm-installation-doc/assets/img/hexo-theme-suka.png">
+            </a>
+            <a href="https://hand-mabu.github.io/hexo-mabu-doc/" class="btn btn-link">
+                MabuDoc Theme</a>
+        </section>
+        <section class="navbar-section">
+            
+            <a href="/hdm-installation-doc/windows/" class="btn btn-link navbar-link">English</a>
+            
+        </section>
+    </div>
+</header>
+
+    <div class="off-canvas off-canvas-sidebar-show">
+
+        <div id="sidebar" class="off-canvas-sidebar">
+            
+
+<div class="docs-nav">
+    <div class="docs-search has-icon-left">
+        <i class="form-icon icon icon-search"></i>
+        <input id="search-field" class="form-input" type="text" placeholder="Search...">
+    </div>
+    <div id="search-result"></div>
+    <ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/">
+        手册简介
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux/">
+        Linux版
+    </a>
+</li>
+
+<li class="nav-item active" style>
+    <a href="/hdm-installation-doc/windows/">
+        windows版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="javascript:void(0);">
+        疑难问题
+    </a>
+</li><ul class="nav">
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/linux_question/">
+        linux版
+    </a>
+</li>
+
+<li class="nav-item" style>
+    <a href="/hdm-installation-doc/windows_question/">
+        windows版
+    </a>
+</li></ul></ul>
+    <!-- <ul class="nav"> -->
+    <!-- 
+        <li class="nav-item">
+            <a href="/hdm-installation-doc/config/">nav.config</a>
+        </li>
+    -->
+    <!-- </ul> -->
+</div>
+        </div>
+
+        <a class="off-canvas-overlay" href="#close"></a>
+
+        <div class="off-canvas-content">
+            <div class="container px-0">
+                
+
+
+
+
+<div class="docs-header">
+    <div class="docs-header-wrapper">
+        <div class="title-wrapper">
+            <h1 class="docs-header-title mb-1">windows</h1>
+            
+                <p class="h4 mb-2">Verison 1.0.0</p>
+            
+        </div>
+        <!-- <span class="label label-rounded bg-dark mt-2">
+            <a class="docs-github" href="https://github.com/theme-suka/docs/tree/master/source/windows.md" target="_blank">在 GitHub 上编辑</a>
+        </span> -->
+    </div>
+</div>
+
+<div class="docs-content">
+    <div class="columns">
+        <div class="column col-9 col-lg-12 docs-content-section">
+            <div class="container px-0">
+                <div id="post-content">
+                    <h1 id="安装应用软件"><a href="#安装应用软件" class="headerlink" title="安装应用软件"></a>安装应用软件</h1><h2 id="介质"><a href="#介质" class="headerlink" title="介质"></a>介质</h2><p>####程序目录<br>E:\HFM\install_Software\HDM</p>
+<p>####安装介质<br>apache-maven-3.3.9-bin.zip<br>apache-tomcat-8.0.32-windows-x64.zip<br>jdk-8u121-windows-x64.exe<br>（jdk版本1.8以上，可根据电脑配置安装32位或64位jdk）<br>Redis-x64-3.2.100.zip<br>nginx-1.15.11.zip<br>core.war<br>core-db.rar</p>
+<p>##安装jdk<br> 双击运行安装文件 jdk-8u121-windows-x64.exe(详略)<br> Jdk环境变量设置</p>
+<pre><code>JAVA_HOME=E:\HFM\HDM\Java\jdk1.8.0_121
+PATH=%JAVA_HOME%\bin;%PATH%
+JAVA_BIN=%JAVA_HOME%\bin
+JAVA_LIB=%JAVA_HOME%\lib
+CLASSPATH=.;%JAVA_LIB%\tools.jar;%JAVA_LIB%\dt.jar
+</code></pre><p> java -version查看jdk版本</p>
+<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><p>####下载tomcat<br>tomcat介质：apache-tomcat-8.0.32-windows-x64.zip</p>
+<p>####安装tomcat<br>解压压缩包apache-tomcat-8.0.32-windows-x64.zip </p>
+<p>####启动tomcat<br>（需提前安装配置好JAVA，启动port端口为8080）</p>
+<pre><code>E:\HFM\HDM\apache-tomcat-8.0.32\bin\startup.bat
+</code></pre><p>对应的停止脚本</p>
+<pre><code>E:\HFM\HDM\apache-tomcat-8.0.32\bin\shutdown.sh
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 安装redis</span><br><span class="line">####下载redis</span><br><span class="line"></span><br><span class="line">本次安装的redis介质：Redis-x64-3.2.100.zip</span><br><span class="line"></span><br><span class="line">####安装redis</span><br><span class="line"></span><br><span class="line">解压文件：Redis-x64-3.2.100.zipcd E:\HFM\HDM\Redis-x64-3.2.100</span><br><span class="line"></span><br><span class="line">####配置文件</span><br></pre></td></tr></table></figure>
+
+E:\HFM\HDM\Redis-x64-3.2.100\redis.windows.conf
+</code></pre><ol>
+<li>启动port端口为6379</li>
+<li>将daemonize的值改为yes（这是设置后台运行，可以不操作）<br>  Redis放在服务器后台运行，修改配置文件属性：<br>将daemonize的值改为yes （默认值为no）</li>
+<li>logs</li>
+</ol>
+<pre><code>pidfile E:\HFM\HDM\Redis-x64-3.2.100\logs\redis_6380.pid
+logfile &quot;E:\HFM\HDM\Redis-x64-3.2.100\logs\redis.log&quot;
+dir E:\HFM\HDM\Redis-x64-3.2.100\logs
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####启动redis</span><br><span class="line">启动命令：</span><br><span class="line">```C:\HDM\Redis-x64-3.2.100\ redis-server.exe</span><br></pre></td></tr></table></figure>
+
+##安装maven部署工具
+####说明
+安装maven
+####下载maven
+URL: http://maven.apache.org/download.cgi
+本次安装的maven介质如下：apache-maven-3.3.9-bin.zip
+####安装maven
+解压文件到指定目录：apache-maven-3.3.9-bin.zip
+####环境变量
+配置maven的环境变量
+</code></pre><p>MAVEN_HOME= E:\HFM\HDM\apache-maven-3.3.9<br>CATALINA_HOME= E:\HFM\HDM\apache-tomcat-8.0.32<br>CATALINA_BASH= E:\HFM\HDM\apache-tomcat-8.0.32<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">####安装后验证</span><br><span class="line">![Alt text](../source/assets/img/maven_verify.png)</span><br><span class="line">#配置</span><br><span class="line">##配置数据库</span><br><span class="line">####创建表空间</span><br><span class="line">```yaml</span><br><span class="line">create tablespace TS_HDMdatafile &apos;TS_HDM.dbf&apos; size 50Mautoextend on next 50M maxsize unlimited loggingextent management local autoallocatesegment space management auto;</span><br></pre></td></tr></table></figure></p>
+<p>####创建数据库用户<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">create</span> <span class="string">user</span> <span class="string">hdm</span> <span class="bullet">---用户名</span><span class="string">identified</span> <span class="string">by</span> <span class="string">hdm---密码</span><span class="string">default</span> <span class="string">tablespace</span> <span class="string">TS_HDM</span> <span class="bullet">---表空间名</span><span class="string">temporary</span> <span class="string">tablespace</span> <span class="string">TEMP</span><span class="string">profile</span> <span class="string">DEFAULT;</span></span><br></pre></td></tr></table></figure></p>
+<p>####授权<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span><span class="bullet">-</span> <span class="string">Grant/Revoke</span> <span class="string">role</span> <span class="string">privileges</span> <span class="string">grant</span> <span class="string">resource</span> <span class="string">to</span> <span class="string">hdm;</span> <span class="bullet">-</span><span class="bullet">-</span> <span class="string">Grant/Revoke</span> <span class="string">system</span> <span class="string">privileges</span> <span class="string">grant</span> <span class="string">create</span> <span class="string">session</span> <span class="string">to</span> <span class="string">hdm;</span><span class="string">grant</span> <span class="string">create</span> <span class="string">view</span> <span class="string">to</span> <span class="string">hdm;</span><span class="string">grant</span> <span class="string">unlimited</span> <span class="string">tablespace</span> <span class="string">to</span> <span class="string">hdm;</span></span><br></pre></td></tr></table></figure></p>
+<p>##配置应用</p>
+<p>####源代码<br>解压core-db.rar</p>
+<p>####编译（需要连接外网）<br>(该操作只需要在一台机器上执行，第二个节点可以考虑直接拷贝core.war包)<br>初始化数据到hdm用户<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">在C:\HDM\core-db</span> <span class="string">路径下cmd命令窗口执行初始化数据库命令（耐心等待）：</span></span><br><span class="line"><span class="string">mvn</span> <span class="string">clean</span> <span class="string">install</span></span><br></pre></td></tr></table></figure></p>
+<p>####初始化数据到hdm用户（只需要在一台机器上执行）<br>编译成功后，执行初始化数据库命令：</p>
+<pre class=" highlight language-yaml"><span class="string">mvn</span> <span class="string">process-resources</span> <span class="bullet">-D</span> <span class="string">skipLiquibaseRun=false</span> <span class="bullet">-D</span> <span class="string">db.driver=oracle.jdbc.driver.OracleDriver</span> <span class="bullet">-D</span> <span class="string">db.url=jdbc:oracle:thin:@localhost:1521:orcl11g</span> <span class="bullet">-Ddb.user=hdm</span> <span class="bullet">-D</span> <span class="string"><code class="language-yaml"><span class="string">mvn</span> <span class="string">process-resources</span> <span class="bullet">-D</span> <span class="string">skipLiquibaseRun=false</span> <span class="bullet">-D</span> <span class="string">db.driver=oracle.jdbc.driver.OracleDriver</span> <span class="bullet">-D</span> <span class="string">db.url=jdbc:oracle:thin:@localhost:1521:orcl11g</span> <span class="bullet">-Ddb.user=hdm</span> <span class="bullet">-D</span> <span class="string">db.password=hdm</span>
+<span class="string"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![Alt text](../source/assets/img/core_db_windows.jpg)####修改tomcat</span><br><span class="line">修改tomcat目录下的conf/context.xml,在最后面添加如下配置：</span><br><span class="line">```yaml<resource auth="Container" driverclassname="oracle.jdbc.driver.OracleDriver" name="jdbc/hbi_dev" type="javax.sql.DataSource" url="jdbc:oracle:thin:@ localhost:1521:orcl11g" username="hdm" password="hdm"></resource></span><br></pre></td></tr></table></figure></span>
+
+<span class="string">![Alt</span> <span class="string">text](../source/assets/img/tomcat_config_w.jpg)</span>
+<span class="comment">####拷贝war包</span>
+<span class="string">将core.war拷贝到tomcat的webapps目录(C:\HDM\apache-tomcat-8.0.32\webapps)下</span>
+<span class="string">注意：模板文件上传路径默认如下：</span>
+<span class="comment">####服务启停</span>
+<span class="string">启动Oracle数据库，开始->服务，在服务面板中启动一下两个服务：</span>
+</code></span></pre>
+<p>OracleOraDb11g_home1TNSListener<br>OracleServiceORCL11G</p>
+<pre><code>其次，先启动redis服务，再启动tomcat服务，注意先后顺序，启动后两个都不要关。
+redis 
+启动
+</code></pre><p>C:\HDM\Redis-x64-3.2.100\ redis-server.exe</p>
+<pre><code>Tomcat
+启动（耐心等待）
+</code></pre><p>E:\HFM\HDM\apache-tomcat-8.0.32\bin\startup.bat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">####访问url（两个节点同样的安装方式）</span><br><span class="line">通过http://&lt;ip&gt;:&lt;prot&gt;/core访问hdm，http://localhost:8080/core初始用户admin/admin</span><br><span class="line">![Alt text](../source/assets/img/hdm_login.jpg)</span><br><span class="line">## 负载均衡</span><br><span class="line">### 下载软件</span><br><span class="line">从http://nginx.org/en/download.html下载nginxnginx-1.15.11.zip</span><br><span class="line">### 安装nginx</span><br><span class="line">&gt;</span><br><span class="line">cd c:\</span><br><span class="line">unzip nginx-1.15.11.zip</span><br><span class="line">cd nginx-1.15.11</span><br><span class="line"></span><br><span class="line">运行tasklist命令行实用程序以查看nginx进程：</span><br><span class="line">&gt;</span><br><span class="line">C:\nginx-1.15.11&gt;tasklist /fi &quot;imagename eq nginx.exe&quot;</span><br><span class="line">Image Name           PID Session Name     Session#    Mem Usage</span><br><span class="line">=============== ======== ============== ========== ============</span><br><span class="line">nginx.exe            652 Console                 0      2 780 K</span><br><span class="line">nginx.exe           1332 Console                 0      3 112 K</span><br><span class="line"></span><br><span class="line">其中一个进程是主进程，另一个进程是工作进程。 如果nginx没有启动，请在错误日志文件logs \ error.log中查找原因。 如果尚未创建日志文件，则应在Windows事件日志中报告其原因。 如果显示错误页面而不是预期页面，还要在logs \ error.log文件中查找原因。</span><br><span class="line">nginx / Windows使用运行它的目录作为配置中相对路径的前缀。 在上面的示例中，前缀是C：\ nginx-1.15.11 \。 必须使用正斜杠以UNIX样式指定配置文件中的路径：</span><br><span class="line">&gt;access_log   logs/site.log;</span><br><span class="line">root         C:/web/html;</span><br><span class="line"></span><br><span class="line">### nginx服务启停</span><br><span class="line">root用户操作：启动nginx</span><br><span class="line">```cd nginx-1.15.11</span><br><span class="line">start nginx</span><br><span class="line">```关闭nginx</span><br></pre></td></tr></table></figure></p>
+<p>cd nginx-1.15.11<br>nginx -s stop</p>
+<pre><code>登录测试(缺省端口为80)
+### 配置nginx
+配置nginx，修改C:/nginx-1.15.11/conf/nginx.conf
+</code></pre><p>upstream  ys-hdmtest1.jingpai.com {<br>    ip_hash;<br>    server 172.16.2.112:8080;<br>    server 172.16.2.113:8080;<br>    }<br>server {<br>        listen       80;<br>        server_name  location;</p>
+<pre><code>#charset koi8-r;
+
+#access_log  logs/host.access.log  main;
+
+location / {
+    proxy_pass http://ys-hdmtest1.jingpai.com;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    root   html;
+    index  index.html index.htm;
+}
+</code></pre><p><code>`</code></p>
+<h3 id="访问url"><a href="#访问url" class="headerlink" title="访问url"></a>访问url</h3><p>访问hdm，<br><a href="http://ys-hdmtest1.jingpai.com/core" target="_blank" rel="noopener">http://ys-hdmtest1.jingpai.com/core</a><br>初始用户admin/admin</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="column col-3 hide-lg docs-toc-section">
+            <div class="container px-0">
+                <div id="post-toc">
+                    
+                        <p class="h4 text-bold">目录</p>
+                        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装应用软件"><span class="post-toc-text">安装应用软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介质"><span class="post-toc-text">介质</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装tomcat"><span class="post-toc-text">安装tomcat</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问url"><span class="post-toc-text">访问url</span></a></li></ol></li></ol></li></ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <p class="mb-2"><a href="https://hand-mabu.github.io/hexo-mabu-doc/" target="_blank">Home</a> · <a href="https://github.com/hand-mabu/hexo-mabu-doc" target="_blank">GitHub</a>
+    </p><p>Designed and built with by <a href="https://github.com/hand-mabu" target="_blank">MABU</a>. Licensed under the <a href="https://github.com/hand-mabu/hexo-mabu-doc/blob/dev/LICENSE" target="_blank">GPL V3 License</a>.</p>
+</footer>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/hdm-installation-doc/jquery.min.js"></script>
+    <script src="/hdm-installation-doc/index.js"></script>
+    <script src="/hdm-installation-doc/local-search.min.js"></script>
+    <script>
+        searchFunc('/hdm-installation-doc/search.json')
+    </script>
+</body>
+
+</html>
