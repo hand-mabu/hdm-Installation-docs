@@ -1,5 +1,5 @@
 ---
-title: windows版
+title: windows
 permalink: /windows/
 description: Verison 1.0.0
 ---
